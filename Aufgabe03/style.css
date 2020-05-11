@@ -1,11 +1,10 @@
 body {
     background-image: url("bg.png");
-    
 }
 nav {
     position: sticky;
     top: 0;
-    margin-top: -10px;
+    margin-top: -15px;
     background-color: black;
     color:white;
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
@@ -30,7 +29,7 @@ nav a:hover {
     height: 900px;
     width: 900px;
     border-radius: 50%;
-    margin: -450px auto auto auto;
+    margin: -450px auto  auto;
     
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     color: whitesmoke;
@@ -44,7 +43,6 @@ nav a:hover {
     margin-top: -160px;
     margin-left: 180px;
     font-size: 50px;
-    
 }
 .conform {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
@@ -52,7 +50,7 @@ nav a:hover {
     width: 300px;
     border: 1px solid grey;
     padding: 10px;
-    margin: 50px auto auto auto;
+    margin: 50px auto 00 auto;
 }
 .info {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
@@ -71,7 +69,7 @@ nav a:hover {
 #fotos {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     color:rgb(30, 88, 156);
-    margin: 5% auto auto auto;
+    margin: 5% auto 0 auto;
     height: 800px;
     text-align: center;
 }

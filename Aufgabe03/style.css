@@ -1,0 +1,81 @@
+body {
+    background-image: url("bg.png");
+    
+}
+nav {
+    position: sticky;
+    top: 0;
+    margin-top: -10px;
+    background-color: black;
+    color:white;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    font-size: larger;
+    width: 300px;
+    height: 30px;
+    left: 60%;
+    padding-left: 10px;
+    border-radius: 0 0 10px 10px;
+}
+nav a {
+    text-decoration: none;
+    color:white;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+nav a:hover {
+    color: crimson;
+    font-weight: bolder;
+}
+#header {
+    background-color: rgb(30, 88, 156);
+    height: 900px;
+    width: 900px;
+    border-radius: 100%;
+    margin-top: -450px;
+    margin-left: 25%;
+    text-align: center;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    color: whitesmoke;
+}
+#header h1 {
+    padding-top: 40%;
+    font-size: 200px;
+}
+#header p {
+    margin-top: -160px;
+    margin-left: 180px;
+    font-size: 50px;
+}
+.conform {
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    font-size: 20px;
+    width: 300px;
+    border: 1px solid grey;
+    padding: 10px;
+    margin-left: 40%;
+    margin-top: 50px;
+}
+.info {
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    text-align: center;
+    font-size: larger;
+    margin-top: 50px;
+}
+.me {
+    margin-top: -500px;
+    margin-left: 1400px;
+}
+.me2 {
+    margin-top: -500px;
+    margin-left: 180px;
+}
+#fotos {
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    padding-top: 5%;
+    padding-left: 5%;
+    color:rgb(30, 88, 156);
+    margin: auto;
+    height: 800px;
+}
+#fotos img {
+    height: 730px;
+}

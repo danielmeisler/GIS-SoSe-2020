@@ -29,12 +29,12 @@ nav a:hover {
     background-color: rgb(30, 88, 156);
     height: 900px;
     width: 900px;
-    border-radius: 100%;
-    margin-top: -450px;
-    margin-left: 25%;
-    text-align: center;
+    border-radius: 50%;
+    margin: -450px auto auto auto;
+    
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     color: whitesmoke;
+    text-align: center;
 }
 #header h1 {
     padding-top: 40%;
@@ -44,6 +44,7 @@ nav a:hover {
     margin-top: -160px;
     margin-left: 180px;
     font-size: 50px;
+    
 }
 .conform {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
@@ -51,8 +52,7 @@ nav a:hover {
     width: 300px;
     border: 1px solid grey;
     padding: 10px;
-    margin-left: 40%;
-    margin-top: 50px;
+    margin: 50px auto auto auto;
 }
 .info {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
@@ -62,20 +62,16 @@ nav a:hover {
 }
 .me {
     margin-top: -500px;
-    margin-left: 1400px;
+    margin-left: 50%;
 }
 .me2 {
     margin-top: -500px;
-    margin-left: 180px;
+    margin-left: 50%;
 }
 #fotos {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-    padding-top: 5%;
-    padding-left: 5%;
     color:rgb(30, 88, 156);
-    margin: auto;
+    margin: 5% auto auto auto;
     height: 800px;
-}
-#fotos img {
-    height: 730px;
+    text-align: center;
 }

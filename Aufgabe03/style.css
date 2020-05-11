@@ -29,8 +29,7 @@ nav a:hover {
     height: 900px;
     width: 900px;
     border-radius: 50%;
-    margin: -450px auto  auto;
-    
+    margin: -450px auto auto auto;
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     color: whitesmoke;
     text-align: center;
@@ -43,6 +42,9 @@ nav a:hover {
     margin-top: -160px;
     margin-left: 180px;
     font-size: 50px;
+}
+#header img {
+    width: 150px;
 }
 .conform {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
@@ -57,14 +59,6 @@ nav a:hover {
     text-align: center;
     font-size: larger;
     margin-top: 50px;
-}
-.me {
-    margin-top: -500px;
-    margin-left: 50%;
-}
-.me2 {
-    margin-top: -500px;
-    margin-left: 50%;
 }
 #fotos {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;

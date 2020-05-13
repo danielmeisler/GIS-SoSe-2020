@@ -1,6 +1,10 @@
 body {
     background-image: url("bg.png");
 }
+textarea, input {
+    background-color:lightgrey;
+    border: none;
+}
 nav {
     position: sticky;
     top: 0;
@@ -44,8 +48,16 @@ nav a:hover {
     font-size: 50px;
 }
 #header img {
-    width: 150px;
-    margin-top: -20px;
+    height: 40px;
+    width: 40px;
+    margin-top: 100px;
+}
+#header img:hover {
+    width: 40px;
+    height: 20px; 
+}
+#header a{
+    text-decoration: none;
 }
 .conform {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
@@ -54,6 +66,9 @@ nav a:hover {
     border: 1px solid grey;
     padding: 10px;
     margin: 50px auto 00 auto;
+    color: rgb(30, 88, 156);
+    font-weight: bolder;
+    margin-top: -20px;
 }
 .info {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
@@ -65,6 +80,13 @@ nav a:hover {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     color:rgb(30, 88, 156);
     margin: 5% auto 0 auto;
-    height: 800px;
+    height: 800px; 
     text-align: center;
+}
+h3 {
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    color: rgb(30, 88, 156);;
 }

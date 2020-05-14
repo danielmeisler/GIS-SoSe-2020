@@ -77,11 +77,33 @@ nav a:hover {
     margin-top: 50px;
 }
 #fotos {
-    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-    color:rgb(30, 88, 156);
     margin: 5% auto 0 auto;
-    height: 800px; 
+    width: 800px; 
     text-align: center;
+}
+#videos {
+    text-align: center;
+    margin: 5% auto 0 auto;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    width: 800px;
+}
+#videos video{
+    width: 800px;
+}
+#audios{
+    text-align: center;
+    margin: 5% auto 0 auto;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    width: 800px;
+}
+#audios audio{
+    width: 800px;
+}
+#umfragen {
+    text-align: center;
+    margin: 5% auto 0 auto;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    width: 800px;
 }
 h3, h2 {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;

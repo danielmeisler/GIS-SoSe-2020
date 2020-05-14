@@ -92,4 +92,12 @@ h3 {
 }
 #leben {
     margin-top: 100px;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    margin: 200px auto 0 auto;
+    font-size: larger;
+    width: 1000px;
+}
+#leben img {
+    margin-top: -320px;
+    margin-left: 700px;
 }

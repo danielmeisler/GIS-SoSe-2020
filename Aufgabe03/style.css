@@ -101,15 +101,23 @@ nav a:hover {
 }
 #umfragen {
     text-align: center;
-    margin: 5% auto 0 auto;
+    margin: 5% auto 5% auto;
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     width: 800px;
+    font-size: larger;
+}
+#umfragen input {
+    background-color: rgb(30, 88, 156);
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    color: white;
+    font-size: larger;
+    padding: 5px;
 }
 h3, h2 {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     font-size: 30px;
     font-weight: bolder;
-    color: rgb(30, 88, 156);;
+    color: rgb(30, 88, 156);
 }
 h3 {
     text-align: center;

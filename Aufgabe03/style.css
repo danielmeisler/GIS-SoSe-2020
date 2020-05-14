@@ -83,15 +83,16 @@ nav a:hover {
     height: 800px; 
     text-align: center;
 }
-h3 {
+h3, h2 {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-    text-align: center;
     font-size: 30px;
     font-weight: bolder;
     color: rgb(30, 88, 156);;
 }
+h3 {
+    text-align: center;
+}
 #leben {
-    margin-top: 100px;
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     margin: 200px auto 0 auto;
     font-size: larger;
@@ -99,5 +100,25 @@ h3 {
 }
 #leben img {
     margin-top: -320px;
-    margin-left: 700px;
+    margin-left: 650px;
+}
+#schule {
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    margin: 100px auto 0 auto;
+    font-size: larger;
+    text-align: left;
+    width: 1000px;
+    padding-left: 700px;
+}
+#schule img{
+    width: 250px;
+    margin-left: -360px;
+    margin-top: -280px;
+}
+#geschichte{
+    text-align: center;
+    font-size: larger;
+    width: 1000px;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    margin: 100px auto 0 auto;
 }

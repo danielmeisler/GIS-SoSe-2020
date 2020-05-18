@@ -70,6 +70,10 @@ nav a:hover {
     font-weight: bolder;
     margin-top: -20px;
 }
+.conform p {
+    color: gray;
+    font-size: x-small;
+}
 .info {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     text-align: center;

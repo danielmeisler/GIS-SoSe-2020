@@ -5,10 +5,12 @@ body {
 footer {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     color: white;
-    height: 50px;
+    height: 180px;
     text-align: center;
+    background-image: linear-gradient(rgb(0, 154, 255), rgb(0, 71, 119));
 }
 footer img{
+    margin-top: 10px;
     width: 100px;
 }
 .myBody{
@@ -40,14 +42,8 @@ input {
 #header a:hover{
     background-color: rgb(0, 71, 119);
 }
-#wave {
-    margin-top: -60px;
-}
-#wave2 {
-    margin-bottom: -180px;
-}
 #k1 h1{
-    margin-top: -100px;
+    margin-top: 100px;
     color: rgb(30, 88, 156);
 }
 #k2>h1{

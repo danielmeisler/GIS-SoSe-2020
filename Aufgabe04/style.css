@@ -8,7 +8,7 @@ footer {
     height: 50px;
     text-align: center;
 }
-footer img[alt=Footerkoenig] {
+footer img{
     width: 100px;
 }
 .myBody{
@@ -27,9 +27,9 @@ input {
     word-spacing: 100px;
     padding: 10px;
     position: sticky;
-    top:0;
+    top:0;  
 }
-#header img{
+#header img[alt=Eiskoenig]{
     width: 10%;
 }
 #header a {
@@ -75,4 +75,8 @@ input {
 .becher {
     width: 30%;
     padding: 50px 1.5% 50px 1.5%;
+}
+h3::after {
+    content: "1.00€";
+    color: rgb(30, 88, 156);
 }

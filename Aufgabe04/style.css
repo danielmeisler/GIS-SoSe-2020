@@ -1,3 +1,4 @@
+@media screen and (min-width: 1024px){
 body {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     margin: auto auto auto auto;
@@ -79,4 +80,8 @@ input {
 h3::after {
     content: "1.00€";
     color: rgb(30, 88, 156);
+}
+}
+@media screen and (max-width: 600px){
+
 }

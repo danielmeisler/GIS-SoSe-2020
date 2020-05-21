@@ -10,6 +10,7 @@ footer {
     text-align: center;
 }
 footer img{
+    margin-top: 10px;
     width: 100px;
 }
 .myBody{
@@ -86,5 +87,5 @@ h3::after {
 
 }
 @media screen and (min-width: 600 px) and (max-width: 1024px){
-    
+
 }

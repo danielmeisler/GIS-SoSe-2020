@@ -1,0 +1,147 @@
+@media screen and (min-width: 1024px){
+body {
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    margin: auto auto auto auto;
+}
+footer {
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    color: white;
+    height: 50px;
+    text-align: center;
+}
+footer img{
+    margin-top: 10px;
+    width: 100px;
+}
+input {
+    background-color: rgb(30, 88, 156);
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    color: white;
+    padding: 5px;
+}
+#header {
+    background-image: linear-gradient(rgb(0, 71, 119),rgb(0, 154, 255));
+    text-align: center;
+    word-spacing: 100px;
+    padding: 10px;
+    position: sticky;
+    top:0;  
+}
+#header img[alt=Eiskoenig]{
+    width: 10%;
+}
+#header a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+#header a:hover{
+    background-color: rgb(0, 71, 119);
+}
+#wave {
+    margin-top: -50px;
+}
+#wave2 {
+    margin-bottom: -180px;
+}
+.eiswaffel h1{
+    color: rgb(30, 88, 156);
+    width: 60%;
+    margin: -150px auto 50px auto;
+}
+.eisbecher h1{
+    color: rgb(30, 88, 156);
+    width: 60%;
+    margin: 200px auto 50px auto; 
+}
+.container_waffel {
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    padding: 50px 5% 50px 5%;
+}
+.container_becher {
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    padding: 50px 10% 50px 10%;
+}
+}
+@media screen and (max-width: 600px){
+    body {
+        font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+        margin: auto auto auto auto;
+    }
+    footer {
+        font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+        color: white;
+        height: 200px;
+        text-align: center;
+        background-image: linear-gradient(rgb(0, 154, 255), rgb(0, 71, 119));
+    }
+    footer img{
+        margin-top: 10px;
+        width: 100px;
+    }
+    #header {
+        background-image: linear-gradient(rgb(0, 71, 119),rgb(0, 154, 255));
+        text-align: center;
+        word-spacing: 50px;
+        padding: 10px;
+        position: sticky;
+        top:0;  
+    }
+    #header img[alt=Eiskoenig]{
+        width: 30%;
+    }
+    #header a {
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+    }
+    #header a:hover{
+        background-color: rgb(0, 71, 119);
+    }
+    #wave {
+        margin-top: -10px;
+    }
+    #wave2 {
+        margin-bottom: -10px;
+    }
+    .eiswaffel h1{
+        color: rgb(30, 88, 156);
+        margin: auto auto 10px auto;
+        text-align: center;
+    }
+    .eisbecher h1{
+        color: rgb(30, 88, 156);
+        margin: 50px auto 10px auto; 
+        text-align: center;
+    }
+    .container_waffel {
+        justify-content: space-evenly;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        text-align: center;
+        padding: 50px 5% 50px 5%;
+    }
+    .container_becher {
+        justify-content: space-evenly;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        margin: auto;
+        padding: auto 10% 50px 10%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+  
+}

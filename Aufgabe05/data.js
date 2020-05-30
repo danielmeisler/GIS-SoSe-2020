@@ -3,7 +3,7 @@ var Aufgabe05;
 (function (Aufgabe05) {
     let aftereight = { bild: "waffel_aftereight.jpg", titel: "After Eight", text: "Perfektes Eis um es nach Achte zu genießen.", preis: "Preis: 1.00€" };
     let blackmamba = { bild: "waffel_blackmamba.jpg", titel: "Black Mamba", text: "Genau so lecker-gefährlich wie sein Namensgeber.", preis: "Preis: 1.00€" };
-    let buttermilchmango = { bild: "waffel_buttermilchmango.jpg", titel: "Buttermilch Mango", text: "Buttermilch und Mango - Was will man mehr?", preis: "Preis: 1.00€" };
+    let buttermilchmango = { bild: "waffel_buttermilchmango.jpg", titel: "Buttermilch", text: "Buttermilch und Mango - Was will man mehr?", preis: "Preis: 1.00€" };
     let erdbeere = { bild: "waffel_erdbeere.jpg", titel: "Erdbeere", text: "Frisch gepflückt für die fröhlichen Früchtchen.", preis: "Preis: 1.00€" };
     let erdbeerkaese = { bild: "waffel_erdbeerkaese.jpg", titel: "Käsekuchen", text: "Da ist Kuchen drin, muss ich mehr sagen?", preis: "Preis: 1.00€" };
     let mango = { bild: "waffel_mango.jpg", titel: "Mango", text: "Mehr exotischer Genuss geht nicht mehr.", preis: "Preis: 1.00€" };

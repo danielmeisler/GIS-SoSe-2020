@@ -1,60 +1,60 @@
 namespace Aufgabe05 {
 
-for (let i: number = 0; i < waffel.length; i++) {
-  
-    let xDiv: HTMLDivElement = document.createElement("div");
-    xDiv.id = "waffelDiv" + i;
-    xDiv.classList.add("waffelClass");
-    document.getElementById("cw")?.appendChild(xDiv);
+    for (let i: number = 0; i < waffel.length; i++) {
 
-    let xImg: HTMLImageElement = document.createElement("img");
-    xImg.src = waffel[i].bild;
-    document.getElementById("waffelDiv" + i)?.appendChild(xImg);
+        let xDiv: HTMLDivElement = document.createElement("div");
+        xDiv.id = "waffelDiv" + i;
+        xDiv.classList.add("waffelClass");
+        document.getElementById("cw")?.appendChild(xDiv);
 
-    let xH2: HTMLElement = document.createElement("h2");
-    xH2.innerHTML = waffel[i].titel;
-    document.getElementById("waffelDiv" + i)?.appendChild(xH2);
+        let xImg: HTMLImageElement = document.createElement("img");
+        xImg.src = waffel[i].bild;
+        document.getElementById("waffelDiv" + i)?.appendChild(xImg);
 
-    let xP: HTMLParagraphElement = document.createElement("p");
-    xP.innerHTML = waffel[i].text;
-    document.getElementById("waffelDiv" + i)?.appendChild(xP);
+        let xH2: HTMLElement = document.createElement("h2");
+        xH2.innerHTML = waffel[i].titel;
+        document.getElementById("waffelDiv" + i)?.appendChild(xH2);
 
-    let xH3: HTMLElement = document.createElement("h3");
-    xH3.innerHTML = waffel[i].preis;
-    document.getElementById("waffelDiv" + i)?.appendChild(xH3);
+        let xP: HTMLParagraphElement = document.createElement("p");
+        xP.innerHTML = waffel[i].text;
+        document.getElementById("waffelDiv" + i)?.appendChild(xP);
 
-    let xButton: HTMLButtonElement = document.createElement("button");
-    xButton.innerHTML = "In den Warenkorb";
-    document.getElementById("waffelDiv" + i)?.appendChild(xButton);
+        let xH3: HTMLElement = document.createElement("h3");
+        xH3.innerHTML = waffel[i].preis;
+        document.getElementById("waffelDiv" + i)?.appendChild(xH3);
 
-}
-for (let i: number = 0; i < becher.length; i++) {
-  
-    let xDiv: HTMLDivElement = document.createElement("div");
-    xDiv.id = "becherDiv" + i;
-    xDiv.classList.add("becherClass");
-    document.getElementById("cb")?.appendChild(xDiv);
+        let xButton: HTMLButtonElement = document.createElement("button");
+        xButton.innerHTML = "In den Warenkorb";
+        document.getElementById("waffelDiv" + i)?.appendChild(xButton);
 
-    let xImg: HTMLImageElement = document.createElement("img");
-    xImg.src = becher[i].bild;
-    document.getElementById("becherDiv" + i)?.appendChild(xImg);
+    }
+    for (let i: number = 0; i < becher.length; i++) {
 
-    let xH2: HTMLElement = document.createElement("h2");
-    xH2.innerHTML = becher[i].titel;
-    document.getElementById("becherDiv" + i)?.appendChild(xH2);
+        let xDiv: HTMLDivElement = document.createElement("div");
+        xDiv.id = "becherDiv" + i;
+        xDiv.classList.add("becherClass");
+        document.getElementById("cb")?.appendChild(xDiv);
 
-    let xP: HTMLParagraphElement = document.createElement("p");
-    xP.innerHTML = becher[i].text;
-    document.getElementById("becherDiv" + i)?.appendChild(xP);
+        let xImg: HTMLImageElement = document.createElement("img");
+        xImg.src = becher[i].bild;
+        document.getElementById("becherDiv" + i)?.appendChild(xImg);
 
-    let xH3: HTMLElement = document.createElement("h3");
-    xH3.innerHTML = becher[i].preis;
-    document.getElementById("becherDiv" + i)?.appendChild(xH3);
+        let xH2: HTMLElement = document.createElement("h2");
+        xH2.innerHTML = becher[i].titel;
+        document.getElementById("becherDiv" + i)?.appendChild(xH2);
 
-    let input: HTMLButtonElement = document.createElement("button");
-    input.innerHTML = "In den Warenkorb";
-    document.getElementById("becherDiv" + i)?.appendChild(input);
+        let xP: HTMLParagraphElement = document.createElement("p");
+        xP.innerHTML = becher[i].text;
+        document.getElementById("becherDiv" + i)?.appendChild(xP);
 
-}
+        let xH3: HTMLElement = document.createElement("h3");
+        xH3.innerHTML = becher[i].preis;
+        document.getElementById("becherDiv" + i)?.appendChild(xH3);
+
+        let input: HTMLButtonElement = document.createElement("button");
+        input.innerHTML = "In den Warenkorb";
+        document.getElementById("becherDiv" + i)?.appendChild(input);
+
+    }
 
 }

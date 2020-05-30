@@ -46,24 +46,24 @@ button {
 #wave2 {
     margin-bottom: -180px;
 }
-.eiswaffel h1{
+.eisWaffel h1{
     color: rgb(30, 88, 156);
     width: 60%;
     margin: -80px auto 50px auto;
 }
-.eisbecher h1{
+.eisBecher h1{
     color: rgb(30, 88, 156);
     width: 60%;
     margin: 200px auto 50px auto; 
 }
-.container_waffel {
+.containerWaffel {
     justify-content: space-evenly;
     display: flex;
     flex-wrap: wrap;
     width: 60%;
     margin: auto;
 }
-.container_becher {
+.containerBecher {
     justify-content: space-evenly;
     display: flex;
     flex-wrap: wrap;
@@ -134,17 +134,17 @@ p {
         color: white;
         padding: 5px;
     }
-    .eiswaffel h1{
+    .eisWaffel h1{
         color: rgb(30, 88, 156);
         margin: auto auto 10px auto;
         text-align: center;
     }
-    .eisbecher h1{
+    .eisBecher h1{
         color: rgb(30, 88, 156);
         margin: 50px auto 10px auto; 
         text-align: center;
     }
-    .container_waffel {
+    .containerWaffel {
         justify-content: space-evenly;
         display: flex;
         flex-wrap: wrap;
@@ -153,14 +153,14 @@ p {
         text-align: center;
         padding: 50px 5% 50px 5%;
     }
-    .container_becher {
+    .containerBecher {
         justify-content: space-evenly;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         text-align: center;
         margin: auto;
-        padding: auto 10% 50px 10%;
+        padding: 0 10% 50px 10%;
     }
     .waffelClass{
         padding: 50px 1.5% 50px 1.5%;
@@ -216,17 +216,17 @@ p {
         color: white;
         padding: 5px;
     }
-    .eiswaffel h1{
+    .eisWaffel h1{
         color: rgb(30, 88, 156);
         margin: auto auto 10px auto;
         text-align: center;
     }
-    .eisbecher h1{
+    .eisBecher h1{
         color: rgb(30, 88, 156);
         margin: 50px auto 10px auto; 
         text-align: center;
     }
-    .container_waffel {
+    .containerWaffel {
         justify-content: space-evenly;
         display: flex;
         flex-wrap: wrap;
@@ -235,14 +235,14 @@ p {
         text-align: center;
         padding: 50px 5% 50px 5%;
     }
-    .container_becher {
+    .containerBecher {
         justify-content: space-evenly;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         text-align: center;
         margin: auto;
-        padding: auto 10% 50px 10%;
+        padding: 0 10% 50px 10%;
     }
     .waffelClass{
         padding: 50px 1.5% 50px 1.5%;

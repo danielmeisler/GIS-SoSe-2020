@@ -55,7 +55,7 @@ button {
     margin: -25px 0 0 15px;
     font-size: 10px;
     font-weight: bolder;
-    color: red;
+    color: rgb(0, 71, 119);
 }
 #wave {
     margin-top: -50px;
@@ -153,7 +153,7 @@ p {
         margin: -25px 0 0 15px;
         font-size: 10px;
         font-weight: bolder;
-        color: red;
+        color: rgb(0, 71, 119);
     }
     #wave {
         margin-top: -10px;
@@ -252,7 +252,7 @@ p {
         margin: -25px 0 0 15px;
         font-size: 10px;
         font-weight: bolder;
-        color: red;
+        color: rgb(0, 71, 119);
     }
     #wave {
         margin-top: -10px;

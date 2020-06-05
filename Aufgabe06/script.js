@@ -58,7 +58,7 @@ var Aufgabe06;
     let artikelZaehler = 0;
     let blasenDiv = document.createElement("div");
     function handleWarenkorb(_event) {
-        if (artikelZaehler > 0) {
+        if (artikelZaehler >= 0) {
             document.getElementById("kaufBlase")?.appendChild(blasenDiv);
         }
         artikelZaehler++;
@@ -67,18 +67,18 @@ var Aufgabe06;
             ergebnis = temp + waffelPreis;
             temp = ergebnis;
         }
-        else if (_event.currentTarget.parentElement?.getAttribute("becherKat")) {
+        else if (_event.currentTarget.parentElement?.getAttribute("bechKat")) {
             ergebnis = temp + becherPreis;
             temp = ergebnis;
         }
         console.log("Summe: " + ergebnis.toFixed(2) + "€");
     }
     let xAlleKategorien = document.createElement("a");
-    xAlleKategorien.id = "HomeButt";
+    xAlleKategorien.id = "homeButt";
     xAlleKategorien.addEventListener("click", handleKategorie);
     let xTestBild = document.createElement("img");
     xTestBild.src = "home.png";
-    document.getElementById("HomeButton")?.appendChild(xAlleKategorien).appendChild(xTestBild);
+    document.getElementById("homeButton")?.appendChild(xAlleKategorien).appendChild(xTestBild);
     let xWaffelKategorie = document.createElement("a");
     xWaffelKategorie.id = "waffButt";
     xWaffelKategorie.innerHTML = "Waffeleis";
@@ -90,10 +90,9 @@ var Aufgabe06;
     xBecherKategorie.addEventListener("click", handleKategorie);
     document.getElementById("becherButton")?.appendChild(xBecherKategorie);
     function handleKategorie(_event) {
-        if (_event.currentTarget.getAttribute("id") == "HomeButt") {
+        if (_event.currentTarget.getAttribute("id") == "homeButt") {
             document.getElementById("eisWaffelID").style.display = "block";
             document.getElementById("eisBecherID").style.display = "block";
-            document.getElementById("eisBecherID").style.marginTop = "0";
         }
         else if (_event.currentTarget.getAttribute("id") == "waffButt") {
             document.getElementById("eisBecherID").style.display = "none";
@@ -102,7 +101,6 @@ var Aufgabe06;
         else if (_event.currentTarget.getAttribute("id") == "bechButt") {
             document.getElementById("eisWaffelID").style.display = "none";
             document.getElementById("eisBecherID").style.display = "block";
-            document.getElementById("eisBecherID").style.marginTop = "-280px";
         }
     }
 })(Aufgabe06 || (Aufgabe06 = {}));

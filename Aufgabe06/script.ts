@@ -76,7 +76,7 @@ namespace Aufgabe06 {
 
     function handleWarenkorb(_event: Event): void {
 
-        if (artikelZaehler > 0) {
+        if (artikelZaehler >= 0) {
             document.getElementById("kaufBlase")?.appendChild(blasenDiv);
         }
 
@@ -86,7 +86,7 @@ namespace Aufgabe06 {
         if ((<HTMLDivElement>_event.currentTarget).parentElement?.getAttribute("waffKat")) {
             ergebnis = temp + waffelPreis;
             temp = ergebnis;
-        } else if ((<HTMLDivElement>_event.currentTarget).parentElement?.getAttribute("becherKat")) {
+        } else if ((<HTMLDivElement>_event.currentTarget).parentElement?.getAttribute("bechKat")) {
             ergebnis = temp + becherPreis;
             temp = ergebnis;
         }
@@ -94,11 +94,11 @@ namespace Aufgabe06 {
     }
 
     let xAlleKategorien: HTMLAnchorElement = document.createElement("a");
-    xAlleKategorien.id = "HomeButt";
+    xAlleKategorien.id = "homeButt";
     xAlleKategorien.addEventListener("click", handleKategorie);
     let xTestBild: HTMLImageElement = document.createElement("img");
     xTestBild.src = "home.png";
-    document.getElementById("HomeButton")?.appendChild(xAlleKategorien).appendChild(xTestBild);
+    document.getElementById("homeButton")?.appendChild(xAlleKategorien).appendChild(xTestBild);
 
     let xWaffelKategorie: HTMLAnchorElement = document.createElement("a");
     xWaffelKategorie.id = "waffButt";
@@ -114,17 +114,15 @@ namespace Aufgabe06 {
 
     function handleKategorie(_event: Event): void {
 
-        if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "HomeButt") {
+        if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "homeButt") {
             (<HTMLDivElement>document.getElementById("eisWaffelID")).style.display = "block";
             (<HTMLDivElement>document.getElementById("eisBecherID")).style.display = "block";
-            (<HTMLDivElement>document.getElementById("eisBecherID")).style.marginTop = "0";
         } else if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "waffButt") {
             (<HTMLDivElement>document.getElementById("eisBecherID")).style.display = "none";
             (<HTMLDivElement>document.getElementById("eisWaffelID")).style.display = "block";
         } else if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "bechButt") {
             (<HTMLDivElement>document.getElementById("eisWaffelID")).style.display = "none";
             (<HTMLDivElement>document.getElementById("eisBecherID")).style.display = "block";
-            (<HTMLDivElement>document.getElementById("eisBecherID")).style.marginTop = "-280px";
         }
     }
 }

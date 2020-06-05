@@ -37,7 +37,7 @@ namespace Aufgabe06 {
         }
 
         if (eissorte[i].kategorie == 2) {
-           
+
             let xDiv: HTMLDivElement = document.createElement("div");
             xDiv.id = "becherDiv" + i;
             xDiv.classList.add("becherClass");
@@ -66,9 +66,9 @@ namespace Aufgabe06 {
             xButton.addEventListener("click", handleWarenkorb);
             xDiv.appendChild(xButton);
         }
-        
+
     }
-    
+
     let ergebnis: number = 0;
     let temp: number = 0;
     let artikelZaehler: number = 0;
@@ -83,7 +83,7 @@ namespace Aufgabe06 {
         artikelZaehler++;
         blasenDiv.innerHTML = artikelZaehler + "";
 
-        if ( (<HTMLDivElement>_event.currentTarget).parentElement?.getAttribute("waffKat") ) {
+        if ((<HTMLDivElement>_event.currentTarget).parentElement?.getAttribute("waffKat")) {
             ergebnis = temp + waffelPreis;
             temp = ergebnis;
         } else if ((<HTMLDivElement>_event.currentTarget).parentElement?.getAttribute("becherKat")) {
@@ -92,6 +92,13 @@ namespace Aufgabe06 {
         }
         console.log("Summe: " + ergebnis.toFixed(2) + "€");
     }
+
+    let xAlleKategorien: HTMLAnchorElement = document.createElement("a");
+    xAlleKategorien.id = "HomeButt";
+    xAlleKategorien.addEventListener("click", handleKategorie);
+    let xTestBild: HTMLImageElement = document.createElement("img");
+    xTestBild.src = "home.png";
+    document.getElementById("HomeButton")?.appendChild(xAlleKategorien).appendChild(xTestBild);
 
     let xWaffelKategorie: HTMLAnchorElement = document.createElement("a");
     xWaffelKategorie.id = "waffButt";
@@ -107,12 +114,14 @@ namespace Aufgabe06 {
 
     function handleKategorie(_event: Event): void {
 
-        if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "waffButt") {
-            console.log("Kategorie1");
+        if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "HomeButt") {
+            (<HTMLDivElement>document.getElementById("eisWaffelID")).style.display = "block";
+            (<HTMLDivElement>document.getElementById("eisBecherID")).style.display = "block";
+            (<HTMLDivElement>document.getElementById("eisBecherID")).style.marginTop = "0";
+        } else if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "waffButt") {
             (<HTMLDivElement>document.getElementById("eisBecherID")).style.display = "none";
             (<HTMLDivElement>document.getElementById("eisWaffelID")).style.display = "block";
         } else if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "bechButt") {
-            console.log("Kategorie2");  
             (<HTMLDivElement>document.getElementById("eisWaffelID")).style.display = "none";
             (<HTMLDivElement>document.getElementById("eisBecherID")).style.display = "block";
             (<HTMLDivElement>document.getElementById("eisBecherID")).style.marginTop = "-280px";

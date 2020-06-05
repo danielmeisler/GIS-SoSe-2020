@@ -73,6 +73,12 @@ var Aufgabe06;
         }
         console.log("Summe: " + ergebnis.toFixed(2) + "€");
     }
+    let xAlleKategorien = document.createElement("a");
+    xAlleKategorien.id = "HomeButt";
+    xAlleKategorien.addEventListener("click", handleKategorie);
+    let xTestBild = document.createElement("img");
+    xTestBild.src = "home.png";
+    document.getElementById("HomeButton")?.appendChild(xAlleKategorien).appendChild(xTestBild);
     let xWaffelKategorie = document.createElement("a");
     xWaffelKategorie.id = "waffButt";
     xWaffelKategorie.innerHTML = "Waffeleis";
@@ -84,13 +90,16 @@ var Aufgabe06;
     xBecherKategorie.addEventListener("click", handleKategorie);
     document.getElementById("becherButton")?.appendChild(xBecherKategorie);
     function handleKategorie(_event) {
-        if (_event.currentTarget.getAttribute("id") == "waffButt") {
-            console.log("Kategorie1");
+        if (_event.currentTarget.getAttribute("id") == "HomeButt") {
+            document.getElementById("eisWaffelID").style.display = "block";
+            document.getElementById("eisBecherID").style.display = "block";
+            document.getElementById("eisBecherID").style.marginTop = "0";
+        }
+        else if (_event.currentTarget.getAttribute("id") == "waffButt") {
             document.getElementById("eisBecherID").style.display = "none";
             document.getElementById("eisWaffelID").style.display = "block";
         }
         else if (_event.currentTarget.getAttribute("id") == "bechButt") {
-            console.log("Kategorie2");
             document.getElementById("eisWaffelID").style.display = "none";
             document.getElementById("eisBecherID").style.display = "block";
             document.getElementById("eisBecherID").style.marginTop = "-280px";

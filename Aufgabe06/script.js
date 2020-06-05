@@ -1,15 +1,15 @@
 "use strict";
 var Aufgabe06;
 (function (Aufgabe06) {
-    let testPreis = 0;
-    let testPreis2 = 0;
+    let waffelPreis = 0;
+    let becherPreis = 0;
     for (let i = 0; i < Aufgabe06.eissorte.length; i++) {
         if (Aufgabe06.eissorte[i].kategorie == 1) {
             let xDiv = document.createElement("div");
             xDiv.id = "waffelDiv" + i;
             xDiv.classList.add("waffelClass");
             document.getElementById("conWaff")?.appendChild(xDiv);
-            xDiv.setAttribute("testid", i.toString());
+            xDiv.setAttribute("waffKat", i.toString());
             let xImg = document.createElement("img");
             xImg.src = Aufgabe06.eissorte[i].bild;
             xDiv.appendChild(xImg);
@@ -21,8 +21,7 @@ var Aufgabe06;
             xDiv.appendChild(xP);
             let xH3 = document.createElement("h3");
             xH3.innerHTML = "Preis: " + Aufgabe06.eissorte[i].preis + "0 €";
-            testPreis = Aufgabe06.eissorte[i].preis;
-            console.log(testPreis);
+            waffelPreis = Aufgabe06.eissorte[i].preis;
             xDiv.appendChild(xH3);
             let xButton = document.createElement("button");
             xButton.innerHTML = "In den Warenkorb";
@@ -34,7 +33,7 @@ var Aufgabe06;
             xDiv.id = "becherDiv" + i;
             xDiv.classList.add("becherClass");
             document.getElementById("conBech")?.appendChild(xDiv);
-            xDiv.setAttribute("testid2", i.toString());
+            xDiv.setAttribute("bechKat", i.toString());
             let xImg = document.createElement("img");
             xImg.src = Aufgabe06.eissorte[i].bild;
             xDiv.appendChild(xImg);
@@ -46,8 +45,7 @@ var Aufgabe06;
             xDiv.appendChild(xP);
             let xH3 = document.createElement("h3");
             xH3.innerHTML = "Preis: " + Aufgabe06.eissorte[i].preis + "0 €";
-            testPreis2 = Aufgabe06.eissorte[i].preis;
-            console.log(testPreis2);
+            becherPreis = Aufgabe06.eissorte[i].preis;
             xDiv.appendChild(xH3);
             let xButton = document.createElement("button");
             xButton.innerHTML = "In den Warenkorb";
@@ -60,20 +58,43 @@ var Aufgabe06;
     let artikelZaehler = 0;
     let blasenDiv = document.createElement("div");
     function handleWarenkorb(_event) {
-        if (artikelZaehler >= 0) {
+        if (artikelZaehler > 0) {
             document.getElementById("kaufBlase")?.appendChild(blasenDiv);
         }
         artikelZaehler++;
         blasenDiv.innerHTML = artikelZaehler + "";
-        if (_event.currentTarget.parentElement?.getAttribute("testid")) {
-            ergebnis = temp + testPreis;
+        if (_event.currentTarget.parentElement?.getAttribute("waffKat")) {
+            ergebnis = temp + waffelPreis;
             temp = ergebnis;
         }
-        else if (_event.currentTarget.parentElement?.getAttribute("testid2")) {
-            ergebnis = temp + testPreis2;
+        else if (_event.currentTarget.parentElement?.getAttribute("becherKat")) {
+            ergebnis = temp + becherPreis;
             temp = ergebnis;
         }
-        console.log(ergebnis.toFixed(2));
+        console.log("Summe: " + ergebnis.toFixed(2) + "€");
+    }
+    let xWaffelKategorie = document.createElement("a");
+    xWaffelKategorie.id = "waffButt";
+    xWaffelKategorie.innerHTML = "Waffeleis";
+    xWaffelKategorie.addEventListener("click", handleKategorie);
+    document.getElementById("waffelButton")?.appendChild(xWaffelKategorie);
+    let xBecherKategorie = document.createElement("a");
+    xBecherKategorie.id = "bechButt";
+    xBecherKategorie.innerHTML = "Bechereis";
+    xBecherKategorie.addEventListener("click", handleKategorie);
+    document.getElementById("becherButton")?.appendChild(xBecherKategorie);
+    function handleKategorie(_event) {
+        if (_event.currentTarget.getAttribute("id") == "waffButt") {
+            console.log("Kategorie1");
+            document.getElementById("eisBecherID").style.display = "none";
+            document.getElementById("eisWaffelID").style.display = "block";
+        }
+        else if (_event.currentTarget.getAttribute("id") == "bechButt") {
+            console.log("Kategorie2");
+            document.getElementById("eisWaffelID").style.display = "none";
+            document.getElementById("eisBecherID").style.display = "block";
+            document.getElementById("eisBecherID").style.marginTop = "-280px";
+        }
     }
 })(Aufgabe06 || (Aufgabe06 = {}));
 //# sourceMappingURL=script.js.map

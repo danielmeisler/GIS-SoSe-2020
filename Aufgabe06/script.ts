@@ -73,11 +73,12 @@ namespace Aufgabe06 {
     let temp: number = 0;
     let artikelZaehler: number = 0;
     let blasenDiv: HTMLDivElement = document.createElement("div");
+    blasenDiv.id = "kaufBlase";
 
     function handleWarenkorb(_event: Event): void {
 
         if (artikelZaehler >= 0) {
-            document.getElementById("kaufBlase")?.appendChild(blasenDiv);
+            document.getElementById("warenkorb")?.appendChild(blasenDiv);
         }
 
         artikelZaehler++;

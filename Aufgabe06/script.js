@@ -57,9 +57,10 @@ var Aufgabe06;
     let temp = 0;
     let artikelZaehler = 0;
     let blasenDiv = document.createElement("div");
+    blasenDiv.id = "kaufBlase";
     function handleWarenkorb(_event) {
         if (artikelZaehler >= 0) {
-            document.getElementById("kaufBlase")?.appendChild(blasenDiv);
+            document.getElementById("warenkorb")?.appendChild(blasenDiv);
         }
         artikelZaehler++;
         blasenDiv.innerHTML = artikelZaehler + "";

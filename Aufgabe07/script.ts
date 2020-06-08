@@ -3,7 +3,9 @@ namespace Aufgabe07 {
     let waffelPreis: number = 0;
     let becherPreis: number = 0;
 
-    for (let i: number = 0; i < eissorte.length; i++) {
+    export function createContent(): void {
+       
+        for (let i: number = 0; i < eissorte.length; i++) {
 
         if (eissorte[i].kategorie == 1) {
 
@@ -67,7 +69,11 @@ namespace Aufgabe07 {
             xDiv.appendChild(xButton);
         }
 
-    }
+    }}
+        
+    
+
+    
 
     let ergebnis: number = 0;
     let temp: number = 0;
@@ -126,13 +132,5 @@ namespace Aufgabe07 {
             (<HTMLDivElement>document.getElementById("eisBecherID")).style.display = "block";
         }
     }
-
-    async function communicate(_url: RequestInfo): Promise<void> {
-        let response: Response = await fetch(_url);
-        let respJSON: JSON = await response.json();
-        console.log("Response", respJSON);
-      }
-
-    communicate("eissorte.json");
 
 }

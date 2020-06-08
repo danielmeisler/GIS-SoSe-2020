@@ -7,8 +7,18 @@ namespace Aufgabe07 {
         preis: number;
         kategorie: number;
     }
+    
+    export let eissorte: Eissorte[];
+    
+    async function communicate(_url: RequestInfo): Promise<void> {
+        let response: Response = await fetch(_url);
+        let respJSON: String = await response.json();
+        eissorte = JSON.parse(JSON.stringify(respJSON));
+        createContent();
+    }
+    communicate("data.json");
 
-    let aftereight: Eissorte = { bild: "waffel_aftereight.jpg", titel: "After Eight", text: "Perfektes Eis um es nach Achte zu genießen.", preis: 0.80, kategorie: 1};
+    /*let aftereight: Eissorte = { bild: "waffel_aftereight.jpg", titel: "After Eight", text: "Perfektes Eis um es nach Achte zu genießen.", preis: 0.80, kategorie: 1};
     let blackmamba: Eissorte = { bild: "waffel_blackmamba.jpg", titel: "Black Mamba", text: "Genau so lecker-gefährlich wie sein Namensgeber.", preis: 0.80, kategorie: 1};
     let buttermilchmango: Eissorte = { bild: "waffel_buttermilchmango.jpg", titel: "Buttermilch", text: "Buttermilch und Mango - Was will man mehr?", preis: 0.80, kategorie: 1};
     let erdbeere: Eissorte = { bild: "waffel_erdbeere.jpg", titel: "Erdbeere", text: "Frisch gepflückt für die fröhlichen Früchtchen.", preis: 0.80, kategorie: 1};
@@ -34,5 +44,6 @@ namespace Aufgabe07 {
     let waldmeister2: Eissorte = { bild: "eis_waldmeister.jpg", titel: "Waldmeister", text: "Wo sind die Waldmeister-Fans? Hier!", preis: 1.20, kategorie: 2};
 
     export let eissorte: Eissorte[] = [aftereight, blackmamba, buttermilchmango, erdbeere, erdbeerkaese, mango, schokolade, schwarzejohannisbeere, stracciatella, vanille, waldmeister, wassermelone, amarena, bubblegum, cookieamericano, heidelbeere, kinderschoko, minzeschoko, orangezartbitter, quarkhimbeere, schlumpf, schwarzevanille, snikey, waldmeister2];
-    JSON.stringify(eissorte);
+    */
+    
 }

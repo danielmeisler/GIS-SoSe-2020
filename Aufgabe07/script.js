@@ -3,56 +3,59 @@ var Aufgabe07;
 (function (Aufgabe07) {
     let waffelPreis = 0;
     let becherPreis = 0;
-    for (let i = 0; i < Aufgabe07.eissorte.length; i++) {
-        if (Aufgabe07.eissorte[i].kategorie == 1) {
-            let xDiv = document.createElement("div");
-            xDiv.id = "waffelDiv" + i;
-            xDiv.classList.add("waffelClass");
-            document.getElementById("conWaff")?.appendChild(xDiv);
-            xDiv.setAttribute("waffKat", i.toString());
-            let xImg = document.createElement("img");
-            xImg.src = Aufgabe07.eissorte[i].bild;
-            xDiv.appendChild(xImg);
-            let xH2 = document.createElement("h2");
-            xH2.innerHTML = Aufgabe07.eissorte[i].titel;
-            xDiv.appendChild(xH2);
-            let xP = document.createElement("p");
-            xP.innerHTML = Aufgabe07.eissorte[i].text;
-            xDiv.appendChild(xP);
-            let xH3 = document.createElement("h3");
-            xH3.innerHTML = "Preis: " + Aufgabe07.eissorte[i].preis + "0 €";
-            waffelPreis = Aufgabe07.eissorte[i].preis;
-            xDiv.appendChild(xH3);
-            let xButton = document.createElement("button");
-            xButton.innerHTML = "In den Warenkorb";
-            xButton.addEventListener("click", handleWarenkorb);
-            xDiv.appendChild(xButton);
-        }
-        if (Aufgabe07.eissorte[i].kategorie == 2) {
-            let xDiv = document.createElement("div");
-            xDiv.id = "becherDiv" + i;
-            xDiv.classList.add("becherClass");
-            document.getElementById("conBech")?.appendChild(xDiv);
-            xDiv.setAttribute("bechKat", i.toString());
-            let xImg = document.createElement("img");
-            xImg.src = Aufgabe07.eissorte[i].bild;
-            xDiv.appendChild(xImg);
-            let xH2 = document.createElement("h2");
-            xH2.innerHTML = Aufgabe07.eissorte[i].titel;
-            xDiv.appendChild(xH2);
-            let xP = document.createElement("p");
-            xP.innerHTML = Aufgabe07.eissorte[i].text;
-            xDiv.appendChild(xP);
-            let xH3 = document.createElement("h3");
-            xH3.innerHTML = "Preis: " + Aufgabe07.eissorte[i].preis + "0 €";
-            becherPreis = Aufgabe07.eissorte[i].preis;
-            xDiv.appendChild(xH3);
-            let xButton = document.createElement("button");
-            xButton.innerHTML = "In den Warenkorb";
-            xButton.addEventListener("click", handleWarenkorb);
-            xDiv.appendChild(xButton);
+    function createContent() {
+        for (let i = 0; i < Aufgabe07.eissorte.length; i++) {
+            if (Aufgabe07.eissorte[i].kategorie == 1) {
+                let xDiv = document.createElement("div");
+                xDiv.id = "waffelDiv" + i;
+                xDiv.classList.add("waffelClass");
+                document.getElementById("conWaff")?.appendChild(xDiv);
+                xDiv.setAttribute("waffKat", i.toString());
+                let xImg = document.createElement("img");
+                xImg.src = Aufgabe07.eissorte[i].bild;
+                xDiv.appendChild(xImg);
+                let xH2 = document.createElement("h2");
+                xH2.innerHTML = Aufgabe07.eissorte[i].titel;
+                xDiv.appendChild(xH2);
+                let xP = document.createElement("p");
+                xP.innerHTML = Aufgabe07.eissorte[i].text;
+                xDiv.appendChild(xP);
+                let xH3 = document.createElement("h3");
+                xH3.innerHTML = "Preis: " + Aufgabe07.eissorte[i].preis + "0 €";
+                waffelPreis = Aufgabe07.eissorte[i].preis;
+                xDiv.appendChild(xH3);
+                let xButton = document.createElement("button");
+                xButton.innerHTML = "In den Warenkorb";
+                xButton.addEventListener("click", handleWarenkorb);
+                xDiv.appendChild(xButton);
+            }
+            if (Aufgabe07.eissorte[i].kategorie == 2) {
+                let xDiv = document.createElement("div");
+                xDiv.id = "becherDiv" + i;
+                xDiv.classList.add("becherClass");
+                document.getElementById("conBech")?.appendChild(xDiv);
+                xDiv.setAttribute("bechKat", i.toString());
+                let xImg = document.createElement("img");
+                xImg.src = Aufgabe07.eissorte[i].bild;
+                xDiv.appendChild(xImg);
+                let xH2 = document.createElement("h2");
+                xH2.innerHTML = Aufgabe07.eissorte[i].titel;
+                xDiv.appendChild(xH2);
+                let xP = document.createElement("p");
+                xP.innerHTML = Aufgabe07.eissorte[i].text;
+                xDiv.appendChild(xP);
+                let xH3 = document.createElement("h3");
+                xH3.innerHTML = "Preis: " + Aufgabe07.eissorte[i].preis + "0 €";
+                becherPreis = Aufgabe07.eissorte[i].preis;
+                xDiv.appendChild(xH3);
+                let xButton = document.createElement("button");
+                xButton.innerHTML = "In den Warenkorb";
+                xButton.addEventListener("click", handleWarenkorb);
+                xDiv.appendChild(xButton);
+            }
         }
     }
+    Aufgabe07.createContent = createContent;
     let ergebnis = 0;
     let temp = 0;
     let artikelZaehler = 0;
@@ -104,11 +107,5 @@ var Aufgabe07;
             document.getElementById("eisBecherID").style.display = "block";
         }
     }
-    async function communicate(_url) {
-        let response = await fetch(_url);
-        let respJSON = await response.json();
-        console.log("Response", respJSON);
-    }
-    communicate("eissorte.json");
 })(Aufgabe07 || (Aufgabe07 = {}));
 //# sourceMappingURL=script.js.map

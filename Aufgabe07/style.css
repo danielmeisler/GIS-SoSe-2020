@@ -1,0 +1,306 @@
+@media screen and (min-width: 1024px){
+body {
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    margin: auto auto auto auto;
+}
+footer {
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    color: white;
+    height: 50px;
+    text-align: center;
+    font-size: small;
+    margin-top: 25px;
+}
+footer img{
+    margin-top: 10px;
+    width: 100px;
+}
+button {
+    background-color: rgb(30, 88, 156);
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    color: white;
+    padding: 5px;
+}
+#header {
+    background-image: linear-gradient(rgb(0, 71, 119),rgb(0, 154, 255));
+    text-align: center;
+    position: sticky;
+    top:0;
+    word-spacing: 100px;
+}
+#header img[alt=Eiskoenig]{
+    width: 10%;
+}
+#header a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    text-align: center; 
+}
+#header a:hover{
+    background-color: rgb(0, 71, 119);
+}
+.flexHeader {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#kaufBlase{
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: white;
+    margin: -25px 0 0 15px;
+    font-size: 10px;
+    font-weight: bolder;
+    color: rgb(0, 71, 119);
+}
+#wave {
+    margin-top: -50px;
+}
+#wave2 {
+    margin-bottom: -180px;
+}
+.eisWaffel h1{
+    color: rgb(30, 88, 156);
+    width: 60%;
+    margin: -80px auto 50px auto;
+}
+.eisBecher h1{
+    color: rgb(30, 88, 156);
+    width: 60%;
+    margin: -80px auto 50px auto; 
+}
+.containerWaffel {
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: auto auto 200px auto;
+}
+.containerBecher {
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+}
+.waffelClass{
+    text-align: center;
+    width: 30%;
+    padding: 50px 1.5% 50px 1.5%;
+}
+.becherClass{
+    width: 45%;
+    padding: 50px 2.5% 50px 2.5%;
+}
+.becherClass img{
+    width: 100%;
+}
+p {
+    height: 50px;
+}
+}
+@media screen and (max-width: 1024px){
+    body {
+        font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+        margin: auto auto auto auto;
+    }
+    footer {
+        font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+        color: white;
+        height: 200px;
+        text-align: center;
+        background-image: linear-gradient(rgb(0, 154, 255), rgb(0, 71, 119));
+    }
+    footer img{
+        margin-top: -70px;
+        width: 200px;
+    }
+    #header {
+        background-image: linear-gradient(rgb(0, 71, 119),rgb(0, 154, 255));
+        text-align: center;
+        word-spacing: 50px;
+        position: sticky;
+        top:0;  
+    }
+    #header img[alt=Eiskoenig]{
+        width: 30%;
+    }
+    #header a {
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+    }
+    #header a:hover{
+        background-color: rgb(0, 71, 119);
+    }
+    .flexHeader {
+        width: 60%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #kaufBlase{
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background-color: white;
+        margin: -25px 0 0 15px;
+        font-size: 10px;
+        font-weight: bolder;
+        color: rgb(0, 71, 119);
+    }
+    #wave {
+        margin-top: -10px;
+    }
+    #wave2 {
+        margin-bottom: -10px;
+    }
+    button {
+        background-color: rgb(30, 88, 156);
+        font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+        color: white;
+        padding: 5px;
+    }
+    .eisWaffel h1{
+        color: rgb(30, 88, 156);
+        margin: auto auto 10px auto;
+        text-align: center;
+    }
+    .eisBecher h1{
+        color: rgb(30, 88, 156);
+        margin: auto auto 10px auto; 
+        text-align: center;
+    }
+    .containerWaffel {
+        justify-content: space-evenly;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: auto auto 50px auto;
+        text-align: center;
+        padding: 50px 5% 50px 5%;
+    }
+    .containerBecher {
+        justify-content: space-evenly;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: center;
+        margin: auto;
+        padding: 0 10% 50px 10%;
+    }
+    .waffelClass{
+        padding: 50px 1.5% 50px 1.5%;
+    }
+    .becherClass{
+        padding: 50px 2.5% 50px 2.5%;
+    }
+}
+@media screen and (max-width: 600px){
+    body {
+        font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+        margin: auto auto auto auto;
+    }
+    footer {
+        font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+        color: white;
+        height: 200px;
+        text-align: center;
+        background-image: linear-gradient(rgb(0, 154, 255), rgb(0, 71, 119));
+    }
+    footer img{
+        margin-top: -70px;
+        width: 200px;
+    }
+    #header {
+        background-image: linear-gradient(rgb(0, 71, 119),rgb(0, 154, 255));
+        text-align: center;
+        word-spacing: 50px;
+        padding: 10px;
+        position: sticky;
+        top:0;  
+    }
+    #header img[alt=Eiskoenig]{
+        width: 30%;
+    }
+    #header a {
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+    }
+    #header a:hover{
+        background-color: rgb(0, 71, 119);
+    }
+    .flexHeader {
+        width: 60%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #kaufBlase{
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background-color: white;
+        margin: -25px 0 0 15px;
+        font-size: 10px;
+        font-weight: bolder;
+        color: rgb(0, 71, 119);
+    }
+    #wave {
+        margin-top: -10px;
+    }
+    #wave2 {
+        margin-bottom: -10px;
+    }
+    button {
+        background-color: rgb(30, 88, 156);
+        font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+        color: white;
+        padding: 5px;
+    }
+    .eisWaffel h1{
+        color: rgb(30, 88, 156);
+        margin: auto auto 10px auto;
+        text-align: center;
+    }
+    .eisBecher h1{
+        color: rgb(30, 88, 156);
+        margin: auto auto 10px auto; 
+        text-align: center;
+    }
+    .containerWaffel {
+        justify-content: space-evenly;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: auto auto 50px auto;
+        text-align: center;
+        padding: 50px 5% 50px 5%;
+    }
+    .containerBecher {
+        justify-content: space-evenly;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: center;
+        margin: auto;
+        padding: 0 10% 50px 10%;
+    }
+    .waffelClass{
+        padding: 50px 1.5% 50px 1.5%;
+    }
+    .becherClass{
+        padding: 50px 2.5% 50px 2.5%;
+    }
+    .becherClass img{
+        width: 100%;
+    }
+}

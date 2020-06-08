@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="warenkorb.js" defer></script>
     <script src="data.js"></script>
-    <title>Eiskönig</title>
+    <title>Warenkorb</title>
 </head>
-
 <body>
     <div id="header">
         <img src="logo.png" alt="Eiskoenig">
@@ -27,15 +25,10 @@
             d="M0,192L30,176C60,160,120,128,180,106.7C240,85,300,75,360,101.3C420,128,480,192,540,197.3C600,203,660,149,720,149.3C780,149,840,203,900,192C960,181,1020,107,1080,96C1140,85,1200,139,1260,170.7C1320,203,1380,213,1410,218.7L1440,224L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z">
         </path>
     </svg>
-
-    <div class="eisWaffel" id="eisWaffelID">
-        <h1>Eis in der Waffel</h1>
-        <div class="containerWaffel" id="conWaff"></div>
-    </div>
-
-    <div class="eisBecher" id="eisBecherID">
-        <h1>Eis im Becher</h1>
-        <div class="containerBecher" id="conBech"></div>
+    
+    <div class="warenKorb">
+    <h1>Warenkorb:</h1>
+    <div class="containerWarenkorb" id="conWarenkorb"></div>
     </div>
 
     <svg id="wave2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -50,5 +43,4 @@
         <b>Daniel Meisler</b>
     </footer>
 </body>
-
 </html>

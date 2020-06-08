@@ -68,12 +68,8 @@ namespace Aufgabe07 {
             xButton.addEventListener("click", handleWarenkorb);
             xDiv.appendChild(xButton);
         }
-
-    }}
-        
-    
-
-    
+        }
+    }
 
     let ergebnis: number = 0;
     let temp: number = 0;
@@ -132,5 +128,4 @@ namespace Aufgabe07 {
             (<HTMLDivElement>document.getElementById("eisBecherID")).style.display = "block";
         }
     }
-
 }

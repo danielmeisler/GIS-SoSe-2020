@@ -63,20 +63,16 @@ button {
 #wave2 {
     margin-bottom: -180px;
 }
-.eisWaffel h1{
+.eisWaffel h1, .eisBecher h1, .warenKorb{
     color: rgb(30, 88, 156);
     width: 60%;
     margin: -80px auto 50px auto;
 }
-.eisBecher h1{
-    color: rgb(30, 88, 156);
-    width: 60%;
-    margin: -80px auto 50px auto; 
-}
-.containerWaffel {
+.containerWaffel, .containerWarenkorb {
     justify-content: space-evenly;
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
     width: 60%;
     margin: auto auto 200px auto;
 }
@@ -89,7 +85,6 @@ button {
     margin: auto;
 }
 .waffelClass{
-    text-align: center;
     width: 30%;
     padding: 50px 1.5% 50px 1.5%;
 }
@@ -167,17 +162,12 @@ p {
         color: white;
         padding: 5px;
     }
-    .eisWaffel h1{
+    .eisWaffel h1, .eisBecher h1, .warenKorb{
         color: rgb(30, 88, 156);
         margin: auto auto 10px auto;
         text-align: center;
     }
-    .eisBecher h1{
-        color: rgb(30, 88, 156);
-        margin: auto auto 10px auto; 
-        text-align: center;
-    }
-    .containerWaffel {
+    .containerWaffel,  .containerWarenkorb {
         justify-content: space-evenly;
         display: flex;
         flex-wrap: wrap;
@@ -266,17 +256,12 @@ p {
         color: white;
         padding: 5px;
     }
-    .eisWaffel h1{
+    .eisWaffel h1, .eisBecher h1, .warenKorb{
         color: rgb(30, 88, 156);
         margin: auto auto 10px auto;
         text-align: center;
     }
-    .eisBecher h1{
-        color: rgb(30, 88, 156);
-        margin: auto auto 10px auto; 
-        text-align: center;
-    }
-    .containerWaffel {
+    .containerWaffel, .containerWarenkorb {
         justify-content: space-evenly;
         display: flex;
         flex-wrap: wrap;

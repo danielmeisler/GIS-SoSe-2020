@@ -1,4 +1,5 @@
 namespace Aufgabe07 {
+    // Tipps von Samuel Kasper bekommen, weil Fehler nicht wegbekommen.
 
     artikel();
     export async function artikel(): Promise<void> {

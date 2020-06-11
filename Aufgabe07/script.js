@@ -1,6 +1,7 @@
 "use strict";
 var Aufgabe07;
 (function (Aufgabe07) {
+    // Tipps von Samuel Kasper bekommen, weil Fehler nicht wegbekommen.
     artikel();
     async function artikel() {
         await Aufgabe07.communicate("data.json");

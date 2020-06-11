@@ -63,10 +63,20 @@ button {
 #wave2 {
     margin-bottom: -180px;
 }
-.eisWaffel h1, .eisBecher h1, .warenKorb{
+.eisWaffel h1, .eisBecher h1{
     color: rgb(30, 88, 156);
     width: 60%;
     margin: -80px auto 50px auto;
+}
+.warenKorb h1 {
+    color: rgb(30, 88, 156);
+    width: 60%;
+    margin: -80px auto 50px auto;
+}
+#gesamtwertID, #deleteButton {
+    color: rgb(30, 88, 156);
+    width: 60%;
+    margin: 10px auto auto auto;
 }
 .containerWaffel, .containerWarenkorb {
     justify-content: space-evenly;
@@ -84,7 +94,7 @@ button {
     width: 60%;
     margin: auto;
 }
-.waffelClass{
+.waffelClass, .warenkorbClass{
     width: 30%;
     padding: 50px 1.5% 50px 1.5%;
 }
@@ -98,6 +108,10 @@ button {
 p {
     height: 50px;
 }
+.warenkorbClass img {
+    width: 100px;
+}
+
 }
 @media screen and (max-width: 1024px){
     body {

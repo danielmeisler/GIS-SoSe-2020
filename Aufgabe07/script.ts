@@ -1,5 +1,11 @@
 namespace Aufgabe07 {
 
+    artikel();
+    export async function artikel(): Promise<void> {
+        await communicate("data.json");
+        createContent();
+    }
+
     export function createContent(): void {
 
         let artikelDiv: string;

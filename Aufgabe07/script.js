@@ -1,6 +1,12 @@
 "use strict";
 var Aufgabe07;
 (function (Aufgabe07) {
+    artikel();
+    async function artikel() {
+        await Aufgabe07.communicate("data.json");
+        createContent();
+    }
+    Aufgabe07.artikel = artikel;
     function createContent() {
         let artikelDiv;
         let artikelClass;

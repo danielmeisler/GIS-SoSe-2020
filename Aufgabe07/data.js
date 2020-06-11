@@ -5,8 +5,7 @@ var Aufgabe07;
         let response = await fetch(_url);
         let respJSON = await response.json();
         Aufgabe07.eissorte = JSON.parse(JSON.stringify(respJSON));
-        Aufgabe07.createContent();
     }
-    communicate("data.json");
+    Aufgabe07.communicate = communicate;
 })(Aufgabe07 || (Aufgabe07 = {}));
 //# sourceMappingURL=data.js.map

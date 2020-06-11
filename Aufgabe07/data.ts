@@ -10,12 +10,10 @@ namespace Aufgabe07 {
     
     export let eissorte: Eissorte[];
     
-    async function communicate(_url: RequestInfo): Promise<void> {
+    export async function communicate(_url: RequestInfo): Promise<void> {
         let response: Response = await fetch(_url);
         let respJSON: String = await response.json();
         eissorte = JSON.parse(JSON.stringify(respJSON));
-        createContent();
     }
-    communicate("data.json");
     
 }

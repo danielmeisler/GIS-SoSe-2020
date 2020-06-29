@@ -1,37 +1,49 @@
-namespace Aufgabe09 {
+import * as Http from "http";
+import * as Url from "url";
 
-    document.getElementById("buttonHTML")?.addEventListener("click", handleButtonHTML);
-    document.getElementById("buttonJSON")?.addEventListener("click", handleButtonJSON);
+export namespace Aufgabe09 {
+  //Konsolen Ausgabe, dass der Server startet.
+  console.log("Starting server"); 
+  //Port wird als Variable typ number gespeichert.
+  let port: number = Number(process.env.PORT);
+  //Wenn es keinen Port gibt, dann setzt er ihn auf 8100.
+  if (!port)
+    port = 8100;
 
-    function handleButtonHTML(): void {
-        let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://gissose2020-danielmeisler.herokuapp.com/";
-        let query: URLSearchParams = new URLSearchParams(<any> formData);
-        url = url + "?" + query.toString();
-        communicateHTML(url);
-    } 
+  //Server wird als Variable typ Http.Server gespeichert.
+  let server: Http.Server = Http.createServer();
+  //Handler werden dem Server als Listener hinzugefügt.
+  server.addListener("request", handleRequest);
+  server.addListener("listening", handleListen);
+  //Server hört den Port ab.
+  server.listen(port);
 
-    function handleButtonJSON(): void {
-        let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://gissose2020-danielmeisler.herokuapp.com/";
-        let query: URLSearchParams = new URLSearchParams(<any> formData);
-        url = url + "?" + query.toString();
-        communicateJSON(url);
-    } 
+  //Konsole gibt beim Aufruf "Listening" aus.
+  function handleListen(): void {
+    console.log("Listening");
+  }
 
-    async function communicateHTML(_url: RequestInfo): Promise<void> {
-        let response: Response = await fetch(_url, { method: "get" });
-        let response2: string = await response.text();
-        let arraySplit: string[] = response2.split("###");
-        (<HTMLElement>document.getElementById("responseDIV")).innerHTML  = arraySplit[0];
+  function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
+    //Konsole gibt beim Aufruf "I hear voices!" aus.
+    console.log("I hear voices!");
+
+    //Parameter werden für die Response festgelegt.
+    _response.setHeader("content-type", "text/html; charset=utf-8");
+    _response.setHeader("Access-Control-Allow-Origin", "*");
+
+    //Hilfe von David Niemann bekommen.
+    if (_request.url) {
+      let urlQuery: Url.UrlWithParsedQuery  = Url.parse(_request.url, true);
+      console.log(urlQuery.query);
+      for (let key in urlQuery.query) {
+        _response.write(key + ":" + urlQuery.query[key] + "<br/>");
       }
+      _response.write("###");
+      let jsonURL: string = JSON.stringify(urlQuery.query);
+      _response.write(jsonURL);
+    }
 
-    async function communicateJSON(_url: RequestInfo): Promise<void> {
-        let response: Response = await fetch(_url, { method: "get" });
-        let response2: string = await response.text();
-        let arraySplit: string[] = response2.split("###");
-        let jsonString: string = JSON.parse(arraySplit[1]);
-        console.log(jsonString);
-      }
-
+    //Response wird beendet.
+    _response.end();
+  }
 }

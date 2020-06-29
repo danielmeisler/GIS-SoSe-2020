@@ -1,34 +1,47 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Aufgabe09 = void 0;
+const Http = require("http");
+const Url = require("url");
 var Aufgabe09;
 (function (Aufgabe09) {
-    document.getElementById("buttonHTML")?.addEventListener("click", handleButtonHTML);
-    document.getElementById("buttonJSON")?.addEventListener("click", handleButtonJSON);
-    function handleButtonHTML() {
-        let formData = new FormData(document.forms[0]);
-        let url = "https://gissose2020-danielmeisler.herokuapp.com/";
-        let query = new URLSearchParams(formData);
-        url = url + "?" + query.toString();
-        communicateHTML(url);
+    //Konsolen Ausgabe, dass der Server startet.
+    console.log("Starting server");
+    //Port wird als Variable typ number gespeichert.
+    let port = Number(process.env.PORT);
+    //Wenn es keinen Port gibt, dann setzt er ihn auf 8100.
+    if (!port)
+        port = 8100;
+    //Server wird als Variable typ Http.Server gespeichert.
+    let server = Http.createServer();
+    //Handler werden dem Server als Listener hinzugefügt.
+    server.addListener("request", handleRequest);
+    server.addListener("listening", handleListen);
+    //Server hört den Port ab.
+    server.listen(port);
+    //Konsole gibt beim Aufruf "Listening" aus.
+    function handleListen() {
+        console.log("Listening");
     }
-    function handleButtonJSON() {
-        let formData = new FormData(document.forms[0]);
-        let url = "https://gissose2020-danielmeisler.herokuapp.com/";
-        let query = new URLSearchParams(formData);
-        url = url + "?" + query.toString();
-        communicateJSON(url);
+    function handleRequest(_request, _response) {
+        //Konsole gibt beim Aufruf "I hear voices!" aus.
+        console.log("I hear voices!");
+        //Parameter werden für die Response festgelegt.
+        _response.setHeader("content-type", "text/html; charset=utf-8");
+        _response.setHeader("Access-Control-Allow-Origin", "*");
+        //Hilfe von David Niemann bekommen.
+        if (_request.url) {
+            let urlQuery = Url.parse(_request.url, true);
+            console.log(urlQuery.query);
+            for (let key in urlQuery.query) {
+                _response.write(key + ":" + urlQuery.query[key] + "<br/>");
+            }
+            _response.write("###");
+            let jsonURL = JSON.stringify(urlQuery.query);
+            _response.write(jsonURL);
+        }
+        //Response wird beendet.
+        _response.end();
     }
-    async function communicateHTML(_url) {
-        let response = await fetch(_url, { method: "get" });
-        let response2 = await response.text();
-        let arraySplit = response2.split("###");
-        document.getElementById("responseDIV").innerHTML = arraySplit[0];
-    }
-    async function communicateJSON(_url) {
-        let response = await fetch(_url, { method: "get" });
-        let response2 = await response.text();
-        let arraySplit = response2.split("###");
-        let jsonString = JSON.parse(arraySplit[1]);
-        console.log(jsonString);
-    }
-})(Aufgabe09 || (Aufgabe09 = {}));
+})(Aufgabe09 = exports.Aufgabe09 || (exports.Aufgabe09 = {}));
 //# sourceMappingURL=server.js.map

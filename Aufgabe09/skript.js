@@ -22,7 +22,7 @@ var Aufgabe09;
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
         let response = await fetch(url, { method: "get" });
-        let response2 = await response.text();
+        let response2 = await response.json();
         let jsonString = JSON.parse(response2);
         console.log(jsonString);
     }

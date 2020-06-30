@@ -23,7 +23,6 @@ var Aufgabe09;
         url = url + "?" + query.toString();
         let response = await fetch(url, { method: "get" });
         let response2 = await response.json();
-        //let jsonString: string = JSON.parse(response2);
         console.log(response2);
     }
 })(Aufgabe09 || (Aufgabe09 = {}));

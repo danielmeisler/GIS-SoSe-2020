@@ -6,6 +6,7 @@ var Aufgabe09;
     async function communicateHTML() {
         let formData = new FormData(document.forms[0]);
         let url = "https://gissose2020-danielmeisler.herokuapp.com";
+        //let url: string = "http://localhost:8100";
         url += "/html";
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
@@ -16,6 +17,7 @@ var Aufgabe09;
     async function communicateJSON() {
         let formData = new FormData(document.forms[0]);
         let url = "https://gissose2020-danielmeisler.herokuapp.com";
+        //let url: string = "http://localhost:8100";
         url += "/json";
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();

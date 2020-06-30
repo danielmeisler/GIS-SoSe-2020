@@ -6,6 +6,7 @@ namespace Aufgabe09 {
     async function communicateHTML(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         let url: string = "https://gissose2020-danielmeisler.herokuapp.com";
+        //let url: string = "http://localhost:8100";
         url += "/html";
         let query: URLSearchParams = new URLSearchParams(<any> formData);
         url = url + "?" + query.toString();
@@ -18,6 +19,7 @@ namespace Aufgabe09 {
     async function communicateJSON(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         let url: string = "https://gissose2020-danielmeisler.herokuapp.com";
+        //let url: string = "http://localhost:8100";
         url += "/json";
         let query: URLSearchParams = new URLSearchParams(<any> formData);
         url = url + "?" + query.toString();

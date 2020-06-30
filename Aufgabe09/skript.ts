@@ -1,36 +1,30 @@
 namespace Aufgabe09 {
 
-    document.getElementById("buttonHTML")?.addEventListener("click", handleButtonHTML);
-    document.getElementById("buttonJSON")?.addEventListener("click", handleButtonJSON);
+    document.getElementById("buttonHTML")?.addEventListener("click", communicateHTML);
+    document.getElementById("buttonJSON")?.addEventListener("click", communicateJSON);
 
-    function handleButtonHTML(): void {
+    async function communicateHTML(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://gissose2020-danielmeisler.herokuapp.com/";
+        let url: string = "https://gissose2020-danielmeisler.herokuapp.com";
+        url += "/html";
         let query: URLSearchParams = new URLSearchParams(<any> formData);
         url = url + "?" + query.toString();
-        communicateHTML(url);
-    } 
 
-    function handleButtonJSON(): void {
-        let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://gissose2020-danielmeisler.herokuapp.com/";
-        let query: URLSearchParams = new URLSearchParams(<any> formData);
-        url = url + "?" + query.toString();
-        communicateJSON(url);
-    } 
-
-    async function communicateHTML(_url: RequestInfo): Promise<void> {
-        let response: Response = await fetch(_url, { method: "get" });
+        let response: Response = await fetch(url, { method: "get" });
         let response2: string = await response.text();
-        let arraySplit: string[] = response2.split("###");
-        (<HTMLElement>document.getElementById("responseDIV")).innerHTML  = arraySplit[0];
+        (<HTMLElement>document.getElementById("responseDIV")).innerHTML  = response2;
       }
 
-    async function communicateJSON(_url: RequestInfo): Promise<void> {
-        let response: Response = await fetch(_url, { method: "get" });
+    async function communicateJSON(): Promise<void> {
+        let formData: FormData = new FormData(document.forms[0]);
+        let url: string = "https://gissose2020-danielmeisler.herokuapp.com";
+        url += "/json";
+        let query: URLSearchParams = new URLSearchParams(<any> formData);
+        url = url + "?" + query.toString();
+
+        let response: Response = await fetch(url, { method: "get" });
         let response2: string = await response.text();
-        let arraySplit: string[] = response2.split("###");
-        let jsonString: string = JSON.parse(arraySplit[1]);
+        let jsonString: string = JSON.parse(response2);
         console.log(jsonString);
       }
 

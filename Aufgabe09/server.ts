@@ -31,18 +31,19 @@ export namespace Aufgabe09 {
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.setHeader("Access-Control-Allow-Origin", "*");
 
-    //Hilfe von David Niemann bekommen.
+    //
     if (_request.url) {
       let urlQuery: Url.UrlWithParsedQuery  = Url.parse(_request.url, true);
-      console.log(urlQuery.query);
-      for (let key in urlQuery.query) {
-        _response.write(key + ":" + urlQuery.query[key] + "<br/>");
-      }
-      _response.write("###");
+      let path: String | null = urlQuery.pathname;
+      if (path == "/html") {
+        for (let key in urlQuery.query) {
+          _response.write(key + ":" + urlQuery.query[key] + "<br/>");
+        }
+      } else if (path == "/json") {
       let jsonURL: string = JSON.stringify(urlQuery.query);
       _response.write(jsonURL);
     }
-
+  }
     //Response wird beendet.
     _response.end();
   }

@@ -1,33 +1,27 @@
 "use strict";
 var Aufgabe09;
 (function (Aufgabe09) {
-    document.getElementById("buttonHTML")?.addEventListener("click", handleButtonHTML);
-    document.getElementById("buttonJSON")?.addEventListener("click", handleButtonJSON);
-    function handleButtonHTML() {
+    document.getElementById("buttonHTML")?.addEventListener("click", communicateHTML);
+    document.getElementById("buttonJSON")?.addEventListener("click", communicateJSON);
+    async function communicateHTML() {
         let formData = new FormData(document.forms[0]);
-        let url = "https://gissose2020-danielmeisler.herokuapp.com/";
+        let url = "https://gissose2020-danielmeisler.herokuapp.com";
+        url += "/html";
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
-        communicateHTML(url);
+        let response = await fetch(url, { method: "get" });
+        let response2 = await response.text();
+        document.getElementById("responseDIV").innerHTML = response2;
     }
-    function handleButtonJSON() {
+    async function communicateJSON() {
         let formData = new FormData(document.forms[0]);
-        let url = "https://gissose2020-danielmeisler.herokuapp.com/";
+        let url = "https://gissose2020-danielmeisler.herokuapp.com";
+        url += "/json";
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
-        communicateJSON(url);
-    }
-    async function communicateHTML(_url) {
-        let response = await fetch(_url, { method: "get" });
+        let response = await fetch(url, { method: "get" });
         let response2 = await response.text();
-        let arraySplit = response2.split("###");
-        document.getElementById("responseDIV").innerHTML = arraySplit[0];
-    }
-    async function communicateJSON(_url) {
-        let response = await fetch(_url, { method: "get" });
-        let response2 = await response.text();
-        let arraySplit = response2.split("###");
-        let jsonString = JSON.parse(arraySplit[1]);
+        let jsonString = JSON.parse(response2);
         console.log(jsonString);
     }
 })(Aufgabe09 || (Aufgabe09 = {}));

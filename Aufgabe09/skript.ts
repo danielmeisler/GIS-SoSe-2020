@@ -26,7 +26,8 @@ namespace Aufgabe09 {
 
         let response: Response = await fetch(url, { method: "get" });
         let response2: string = await response.json(); 
-        console.log(response2);
+        let jsonString: string = JSON.parse(response2);
+        console.log(jsonString);
       }
 
 }

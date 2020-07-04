@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufgabe 11</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <form id="form">
+        <label for="name">Dein Name:</label> <br>
+        <input type="text" name="name" id="name"><br><br>
+        <label for="geschlecht">Dein Geschlecht:</label> <br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Mann</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Frau</label><br>
+            <input type="radio" id="other" name="gender" value="tractor">
+            <label for="other">Traktor</label>
+        <br>
+        <label for="birthday">Geboren:</label>
+        <input type="date" id="birthday" name="birthday">
+        <br><br>
+        <button id="buttonAdd" type="button">Einfügen</button>
+        <button id="buttonShow" type="button">Anzeigen</button>
+        </form><br>
+        <p>Datenbank:</p>
+        <div id="responseDIV"></div>
+</body>
+</html>

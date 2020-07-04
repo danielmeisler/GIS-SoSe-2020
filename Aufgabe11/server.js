@@ -14,7 +14,8 @@ var Aufgabe11;
     //Wenn es keinen Port gibt, dann setzt er ihn auf 8100.
     if (!port)
         port = 8100;
-    let databaseURL = "mongodb://localhost:27017";
+    //let databaseURL: string = "mongodb://localhost:27017";
+    let databaseURL = "mongodb+srv://dbUser:pw123@gis-sose2020-vjhd2.mongodb.net/DatabaseA11?retryWrites=true&w=majority";
     startServer(port);
     connectToDatabase(databaseURL);
     function startServer(_port) {
@@ -47,27 +48,34 @@ var Aufgabe11;
             let urlQuery = Url.parse(_request.url, true);
             let path = urlQuery.pathname;
             let jsonString = "";
-            if (path == "/show") {
-                // tslint:disable-next-line: typedef
-                orders.find().toArray(function (error, results) {
-                    if (error) {
-                        throw error;
-                    }
+            // tslint:disable-next-line: typedef
+            orders.find().toArray(function (error, results) {
+                if (error) {
+                    throw error;
+                }
+                if (path == "/show") {
                     for (let i = 0; i < results.length; i++) {
                         jsonString += JSON.stringify(results[i]);
+                        jsonString += "<br>";
                     }
-                    _response.write(jsonString);
-                    _response.end();
-                });
-            }
-            if (path == "/add") {
-                orders.insertOne(urlQuery.query);
-            }
+                }
+                if (path == "/delete") {
+                    for (let i = 0; i < results.length; i++) {
+                        jsonString += JSON.stringify(orders.deleteOne(results[results.length - 1]));
+                    }
+                }
+                if (path == "/deleteAll") {
+                    for (let i = 0; i < results.length; i++) {
+                        jsonString += JSON.stringify(orders.deleteOne(results[i]));
+                    }
+                }
+                if (path == "/add") {
+                    orders.insertOne(urlQuery.query);
+                }
+                _response.write(jsonString);
+                _response.end();
+            });
         }
-        //Response wird beendet.
     }
-    //function storeOrder(_order: Order): void {
-    //    orders.insert(_order);
-    //}
 })(Aufgabe11 = exports.Aufgabe11 || (exports.Aufgabe11 = {}));
 //# sourceMappingURL=server.js.map

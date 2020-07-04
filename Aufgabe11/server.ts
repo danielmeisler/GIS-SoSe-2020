@@ -14,7 +14,8 @@ export namespace Aufgabe11 {
     if (!port)
     port = 8100;
 
-    let databaseURL: string = "mongodb://localhost:27017";
+    //let databaseURL: string = "mongodb://localhost:27017";
+    let databaseURL: string = "mongodb+srv://dbUser:pw123@gis-sose2020-vjhd2.mongodb.net/DatabaseA11?retryWrites=true&w=majority";
 
     startServer(port);
     connectToDatabase(databaseURL);
@@ -54,31 +55,36 @@ export namespace Aufgabe11 {
             let urlQuery: Url.UrlWithParsedQuery  = Url.parse(_request.url, true);
             let path: String | null = urlQuery.pathname;
             let jsonString: String = "";
-            if (path == "/show") {
-                
-                // tslint:disable-next-line: typedef
-                orders.find().toArray( function(error: Mongo.MongoError, results: String[]) {
-                    if (error) { throw error; }
-
-                    for (let i: number = 0; i < results.length; i++) {
-                        jsonString += JSON.stringify(results[i]);
-                      }
-
-                    _response.write(jsonString);
-                    _response.end();
-                }
-                );
-                }
+            // tslint:disable-next-line: typedef
+            orders.find().toArray( function(error: Mongo.MongoError, results: String[]) {
+            if (error) { throw error; }
             
-            if (path == "/add") {
-            orders.insertOne(urlQuery.query);
+            if (path == "/show") {
+                for (let i: number = 0; i < results.length; i++) {
+                    jsonString += JSON.stringify(results[i]);
+                    jsonString += "<br>";
+                }
             }
+
+            if (path == "/delete") {
+                for (let i: number = 0; i < results.length; i++) {
+                    jsonString += JSON.stringify(orders.deleteOne(results[results.length - 1]));
+                }
+            }
+
+            if (path == "/deleteAll") {          
+                for (let i: number = 0; i < results.length; i++) {
+                    jsonString += JSON.stringify(orders.deleteOne(results[i]));
+                }
+            }
+
+            if (path == "/add") {
+                orders.insertOne(urlQuery.query);
+            }
+
+            _response.write(jsonString);
+            _response.end();
+            });
         }
-        //Response wird beendet.
     }
-
-    //function storeOrder(_order: Order): void {
-    //    orders.insert(_order);
-    //}
-
 }

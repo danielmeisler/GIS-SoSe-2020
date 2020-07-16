@@ -1,0 +1,30 @@
+body {
+    background-image: url("bilder/eiskoenig_background.png");
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    margin: auto auto auto auto;
+    text-align: center;
+    color: rgb(0, 71, 119);
+}
+.header {
+    background-image: linear-gradient(rgb(0, 71, 119),rgb(0, 154, 255));
+    height: 600px;
+    width: 600px;
+    border-radius: 50%;
+    position: relative;
+    margin: -120px auto 0 auto;
+    z-index: 1;
+}
+.header img[alt=Eiskoenig]{
+    margin: 20% 0 0 0;
+    width: 85%;
+}
+.shop {
+    background-color: white;
+    opacity: 80%;
+    width: 60%;
+    height: 550px;
+    border-radius: 10%;
+    margin: -120px auto 0 auto;
+    position: relative;
+    z-index: 2;
+}

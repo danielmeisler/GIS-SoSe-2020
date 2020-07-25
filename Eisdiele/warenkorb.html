@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="warenkorb_style.css">
+    <script src="warenkorb_script.js" defer></script>
+    <script src="data.js"></script>
+    <title>Warenkorb</title>
+</head>
+<body>
+    <a href="mainpage.html" id="mainpageID">Zum Hauptseite</a>
+    <div class="header">
+        <img src="bilder/eiskoenig_logo.png" alt="Eiskoenig"></div>
+    </div>
+    
+    <div class="warenkorb">
+        <h1>WARENKORB</h1>
+        
+        <div class="orderData" id="orderOrderID">
+            <h2>Bestellung:</h2>
+            <div id="ordersID" name="bestellung"></div>
+            <div id="summeWarenkorb"></div>
+            <div id="deleteButtons"></div>
+        </div>
+
+        <form class="orderData" id="orderFormID">
+            <h2>Lieferdaten:</h2>
+            <label for="vorname">Vorname:</label><br>
+            <input type="text" name="vorname" id="vorname"><br>
+            <label for="nachname">Nachname:</label><br>
+            <input type="text" name="nachname" id="nachname"><br>
+            <label for="strasse">Straße/Nr:</label><br>
+            <input type="text" name="strasse" id="strasse"><br>
+            <label for="plz">Postleitzahl</label><br>
+            <input type="number" name="plz" id="plz"><br>
+            <label for="wohnort">Wohnort</label><br>
+            <input type="text" name="wohnort" id="wohnort"><br>
+        </form>
+        <div id="orderButton"></div>
+    </div>
+</body>
+</html>

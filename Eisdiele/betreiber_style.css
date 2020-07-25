@@ -1,0 +1,95 @@
+body {
+    background-image: url("bilder/eiskoenig_background.png");
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    margin: auto auto auto auto;
+    color: rgb(0, 71, 119);
+}
+.header {
+    background-image: linear-gradient(rgb(0, 71, 119),rgb(0, 154, 255));
+    height: 600px;
+    width: 600px;
+    border-radius: 50%;
+    position: relative;
+    margin: -120px auto 0 auto;
+    z-index: 1;
+    text-align: center;
+}
+.header img[alt=Eiskoenig]{
+    margin: 20% 0 0 0;
+    width: 85%;
+}
+#shopID {
+    background-color:rgb(0, 71, 119);
+    padding: 10px;
+    border-radius: 0 0 25% 25%;
+    margin: 0 0 0 70%;
+    color: white;
+    text-decoration: none;
+    position: sticky;
+    top: -5px;
+    z-index: 3;
+}
+.betreiber {
+    background-color: white;
+    opacity: 80%;
+    width: 60%;
+    margin: -120px auto 0 auto;
+    position: relative;
+    padding-bottom: 50px;
+    z-index: 2;
+}
+.betreiber h1 {
+    text-align: center;
+    font-size: 40px;
+}
+#aktuelleBestellungen {
+    margin: 20px auto 0 100px;
+}
+#OberDIV {
+    margin: 20px auto 20px 0;
+    width: 90%;
+    padding: 5px;
+    justify-content: left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+button {
+    background-color: rgb(30, 88, 156);
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    color: white;
+    padding: 5px;
+}
+#buttonShow {
+    margin: 50px 0 0 100px;
+}
+#memeID {
+    text-align: center;
+    margin-top: 1500px;
+    margin-bottom: 50px;
+}
+.aktuelleBestellungenClass {
+    border: 1px dashed black;
+    margin: 5px 5px 0 0;
+    padding : 10px;
+    justify-content: space-around;
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+}
+#buttonDeleteAll {
+    background-color: red;
+}
+.loeschenButton {
+    background-color: red;
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    #aktuelleBestellungen {
+        margin: 50px 0 0 50px;
+    }
+}
+@media screen and (max-width: 600px){
+    .betreiber {
+        width: 100%;
+    }
+}

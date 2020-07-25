@@ -9,7 +9,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgabe11/server.js remote"
+    "start": "node Eisdiele/server.js remote"
   },
   "repository": {
     "type": "git",

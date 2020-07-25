@@ -5,7 +5,7 @@ var Eisdiele;
     document.getElementById("buttonDeleteAll")?.addEventListener("click", deleteAllEntrys);
     generateBestellungen();
     async function generateBestellungen() {
-        await Eisdiele.communicateBestellungen("ttps://gissose2020-danielmeisler.herokuapp.com/show");
+        await Eisdiele.communicateBestellungen("https://gissose2020-danielmeisler.herokuapp.com/show");
         //await communicateBestellungen("http://localhost:8100/show");
         showOrders();
     }

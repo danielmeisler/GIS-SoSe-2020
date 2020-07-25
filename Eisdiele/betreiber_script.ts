@@ -4,7 +4,7 @@ namespace Eisdiele {
 
   generateBestellungen();
   export async function generateBestellungen(): Promise<void> {
-      await communicateBestellungen("ttps://gissose2020-danielmeisler.herokuapp.com/show");
+      await communicateBestellungen("https://gissose2020-danielmeisler.herokuapp.com/show");
       //await communicateBestellungen("http://localhost:8100/show");
       showOrders();
   }

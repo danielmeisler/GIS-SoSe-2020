@@ -1,6 +1,7 @@
 "use strict";
 var Eisdiele;
 (function (Eisdiele) {
+    //Buttons zum Bestellungen entfernen und Bestellen werden generiert.
     let entferneAllesButton = document.createElement("button");
     entferneAllesButton.id = "allesEntfernen";
     entferneAllesButton.innerHTML = "Alles entfernen";
@@ -11,11 +12,13 @@ var Eisdiele;
     warenkorbButton.innerHTML = "Zahlungspflichtig bestellen";
     warenkorbButton.addEventListener("click", handleWarenkorb);
     document.getElementById("orderButton")?.appendChild(warenkorbButton);
+    //Data.json Artikel werden nochmal übergeben, damit die beim Bestellen in die DB packen kann.
     async function handleWarenkorb() {
         await Eisdiele.communicate("data.json");
         handleBestellung();
     }
     Eisdiele.handleWarenkorb = handleWarenkorb;
+    //Die in den Warenkorb geklickten Artikel werden generiert.
     bestellungenAnzeigen();
     function bestellungenAnzeigen() {
         let bestellungsArray = [];
@@ -43,6 +46,7 @@ var Eisdiele;
             document.getElementById("summeWarenkorbID")?.remove();
         }
     }
+    //Die Gesamtsumme des Einkaufs wird mit dem Preis, der im Shop in den localstorage gepackt wurde, berechnet.
     function summeWarenkorb() {
         let summe = 0;
         let temp = 0;
@@ -56,11 +60,13 @@ var Eisdiele;
         xSumme.innerHTML = "Summe: " + summe.toFixed(2) + "€";
         document.getElementById("summeWarenkorb")?.appendChild(xSumme);
     }
+    //Entfernt alle Bestellungen und leert den LocalStorage.
     function handleAllesEntfernen(_event) {
         localStorage.clear();
         document.getElementById("summeWarenkorbID")?.remove();
         bestellungenAnzeigen();
     }
+    //Entfernen einzelner Artikel und zieht auch den Preis von der Summe ab.
     function handleBestellungEntfernen(_event) {
         (_event.currentTarget.parentElement).remove();
         let summe = parseFloat(localStorage.getItem("summe"));
@@ -71,11 +77,14 @@ var Eisdiele;
         localStorage.setItem("summe", summe.toString());
         localStorage.zaehler--;
     }
+    //Form und Bestellung werden als url zusammengebaut und in die DB gepackt.
+    //Der Bestellungs-String wird vorher so definiert, dass man ihn in die url anhängen kann.
     async function handleBestellung() {
         let formData = new FormData(document.forms[0]);
         let url = "https://gissose2020-danielmeisler.herokuapp.com";
         //let url: string = "http://localhost:8100";
         url += "/add";
+        // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
         document.getElementById("orderData")?.reset();

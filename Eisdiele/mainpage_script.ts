@@ -1,5 +1,6 @@
 namespace Eisdiele {
 
+    // Data.json Datei mit allen Artikeln wird übergeben und ruft darauf alle Klassen zur Erstellung der Showcase auf.
     artikel();
     export async function artikel(): Promise<void> {
         await communicate("data.json");
@@ -10,10 +11,12 @@ namespace Eisdiele {
         preisBerechnung();
     }
 
+    //Globale Variabeln werden für die einzelnen Kategorien mit den Startwerten deklariert, in welchen sie sich im Array befinden.
     let globalEiskugel: number = 0;
     let globalBasis: number = 15;
     let globalTopping: number = 12;
 
+    //Erstellt die Toppings für die Showcase
     let idToppings: string;
     function createTopping(): void {
         let xDiv: HTMLDivElement = document.createElement("div");
@@ -36,6 +39,8 @@ namespace Eisdiele {
         xPreis.innerHTML = "Preis: " + eiskugelnArray[globalTopping].price.toFixed(2).toString() + "€";
         document.getElementById("rechnungID")?.appendChild(xPreis);
     }
+
+    //Erstellt die Eiskugeln für die Showcase
     let idEiskugeln: string;
     function createEiskugeln(): void {
         let xDiv: HTMLDivElement = document.createElement("div");
@@ -58,6 +63,8 @@ namespace Eisdiele {
         xPreis.innerHTML = "Preis: " + eiskugelnArray[globalEiskugel].price.toFixed(2).toString() + "€";
         document.getElementById("rechnungID")?.appendChild(xPreis);
     }
+
+    //Erstellt die Basis für die Showcase
     let idBasis: string;
     function createBasis(): void {
         let xDiv: HTMLDivElement = document.createElement("div");
@@ -81,6 +88,7 @@ namespace Eisdiele {
         document.getElementById("rechnungID")?.appendChild(xPreis);
     }
 
+    //Erstellt die "Zurueck" und "Weiter" Buttons zum weiterklicken.
     function createButtons(): void {
         for (let i: number = 0; i < 3; i++) {
             let xLeftButtons: HTMLButtonElement = document.createElement("button");
@@ -100,8 +108,9 @@ namespace Eisdiele {
         }
     }
 
+    //Logik der Buttons um weiter oder zurück zu klicken. Dabei wird immer das alte Bild removet und das neue drauf geladen.
+    //Das wird dann für alle drei Kategorien gemacht und neu aufgebaut.
     function handleButtons (_event: Event): void {
-
         document.getElementById("summenID")?.remove();
         if (globalTopping >= 12 && globalTopping <= 14) {
             let xDiv: HTMLDivElement = document.createElement("div");
@@ -174,6 +183,7 @@ namespace Eisdiele {
         preisBerechnung();
     }
 
+    //Der Preis wird berechnet und in den LocalStorage gepackt, damit im Warenkorb damit gearbeitet werden kann.
     function preisBerechnung(): void {
         let summe: number;
         summe = eiskugelnArray[globalBasis].price + eiskugelnArray[globalEiskugel].price + eiskugelnArray[globalTopping].price;
@@ -186,12 +196,15 @@ namespace Eisdiele {
         localStorage.setItem("summe", summe.toFixed(2));
     }
     
+    //Button zum Hinzufügen in den Warenkorb wird generiert.
     let mainpageButton: HTMLButtonElement = document.createElement("button");
     mainpageButton.id = "shopButtonID";
     mainpageButton.innerHTML = "In Warenkorb legen";
     mainpageButton.addEventListener("click", handleAddWarenkorb);
     document.getElementById("shopButton")?.appendChild(mainpageButton);
 
+    //Logik für den Button: Bei jedem Klick wird alles in den LocalStorage gepackt.
+    //Somit kann man im Warenkorb mit arbeiten. Der localStorage.zaehler ermöglicht mehrere Bestellungen.
     export function handleAddWarenkorb(_event: Event): void {      
         let rechnungsArray: string[] = [];
         let summenArray: string[] = [];

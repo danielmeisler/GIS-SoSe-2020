@@ -1,7 +1,9 @@
 namespace Eisdiele {
+  //Buttons zum Datenbank leeren und reloaden werden verknüpft.
   document.getElementById("buttonShow")?.addEventListener("click", reloadDatabase);
   document.getElementById("buttonDeleteAll")?.addEventListener("click", deleteAllEntrys);
 
+  //Die Bestellungen werden über die Datenbank und einem Interface abgerufen.
   generateBestellungen();
   export async function generateBestellungen(): Promise<void> {
       await communicateBestellungen("https://gissose2020-danielmeisler.herokuapp.com/show");
@@ -9,10 +11,13 @@ namespace Eisdiele {
       showOrders();
   }
   
+  //Allgemeines Div zum rest reinpacken und ansprechen erstellt.
   let xOberDiv: HTMLDivElement = document.createElement("div");
   xOberDiv.id = "OberDIV";
   document.getElementById("aktuelleBestellungenID")?.appendChild(xOberDiv);
 
+  //Zeigt alle Bestellungen aus der DB an, leert vorher beim aktualisieren den Inhalt der Divs.
+  //Bei manchen Interface strings werden die Veränderungen für die URL rückgängig gemacht.
   async function showOrders(): Promise<void> {
   
         xOberDiv.innerHTML = "";
@@ -92,6 +97,7 @@ namespace Eisdiele {
        
       }
 
+  //Löscht komplette Datenbank.
   async function deleteAllEntrys(): Promise<void> {
     let url: string = "https://gissose2020-danielmeisler.herokuapp.com";
     //let url: string = "http://localhost:8100";
@@ -99,21 +105,21 @@ namespace Eisdiele {
     await fetch(url);
   }
 
+  //Entfernt einzelne Bestellungen, indem es den aktuellen Zähler mit in die URL packt, um dort den richtigen Eintrag zu entfernen.
   async function handleBestellungEntfernen(_event: Event): Promise<void> {
     ((<HTMLDivElement>_event.currentTarget).parentElement!).remove();
     let targetZaehler: string = (<HTMLDivElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("aktuellerZaehler")!;
     let url: string = "https://gissose2020-danielmeisler.herokuapp.com" + "/delete" + "?" + targetZaehler;
     //let url: string = "http://localhost:8100" + "/delete" + "?" + targetZaehler;
-    //url += 
-    //let urlZaehler: string = "http://localhost:8100/zaehler" + "?" + targetZaehler;
-    //await fetch(urlZaehler);
     await fetch(url);
   }
 
+  //Aktualisiert die Datenbank, indem es die Seite neulädt, weil meine alte Methode aus Aufgabe11 hat nicht mehr funktioniert.
   async function reloadDatabase(): Promise<void> {
     location.reload();
   }
 
+  //Beim Klicken dieser Buttons wird die komplette Bestellung ausgegraut und als "bearbeitet" abgestempelt.
   function handleBearbeitet(_event: Event): void {
     let targetZaehler: string = (<HTMLDivElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("aktuellerZaehler")!;
     (<HTMLDivElement>document.getElementById("aktuelleBestellungenDIV" + targetZaehler)).style.borderColor = "lightgrey";

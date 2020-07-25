@@ -1,5 +1,6 @@
 namespace Eisdiele {
    
+    //Interface, Array und Funktion um Eiskugeln aus der data.json zu laden.
     interface Eiskugeln {
         source: string;
         name: string;
@@ -15,6 +16,7 @@ namespace Eisdiele {
         eiskugelnArray = JSON.parse(JSON.stringify(respJSON));
     }
 
+    //Interface, Array und Funktion um Bestellungen aus der DB zu laden.
     interface Bestellungen {
       id: string;
       vorname: string;

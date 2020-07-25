@@ -1,8 +1,10 @@
 "use strict";
 var Eisdiele;
 (function (Eisdiele) {
+    //Buttons zum Datenbank leeren und reloaden werden verknüpft.
     document.getElementById("buttonShow")?.addEventListener("click", reloadDatabase);
     document.getElementById("buttonDeleteAll")?.addEventListener("click", deleteAllEntrys);
+    //Die Bestellungen werden über die Datenbank und einem Interface abgerufen.
     generateBestellungen();
     async function generateBestellungen() {
         await Eisdiele.communicateBestellungen("https://gissose2020-danielmeisler.herokuapp.com/show");
@@ -10,9 +12,12 @@ var Eisdiele;
         showOrders();
     }
     Eisdiele.generateBestellungen = generateBestellungen;
+    //Allgemeines Div zum rest reinpacken und ansprechen erstellt.
     let xOberDiv = document.createElement("div");
     xOberDiv.id = "OberDIV";
     document.getElementById("aktuelleBestellungenID")?.appendChild(xOberDiv);
+    //Zeigt alle Bestellungen aus der DB an, leert vorher beim aktualisieren den Inhalt der Divs.
+    //Bei manchen Interface strings werden die Veränderungen für die URL rückgängig gemacht.
     async function showOrders() {
         xOberDiv.innerHTML = "";
         for (let i = 0; i < Eisdiele.bestellArray.length; i++) {
@@ -73,25 +78,26 @@ var Eisdiele;
             xDiv.appendChild(xButton);
         }
     }
+    //Löscht komplette Datenbank.
     async function deleteAllEntrys() {
         let url = "https://gissose2020-danielmeisler.herokuapp.com";
         //let url: string = "http://localhost:8100";
         url += "/deleteAll";
         await fetch(url);
     }
+    //Entfernt einzelne Bestellungen, indem es den aktuellen Zähler mit in die URL packt, um dort den richtigen Eintrag zu entfernen.
     async function handleBestellungEntfernen(_event) {
         (_event.currentTarget.parentElement).remove();
         let targetZaehler = _event.currentTarget.parentElement.getAttribute("aktuellerZaehler");
         let url = "https://gissose2020-danielmeisler.herokuapp.com" + "/delete" + "?" + targetZaehler;
         //let url: string = "http://localhost:8100" + "/delete" + "?" + targetZaehler;
-        //url += 
-        //let urlZaehler: string = "http://localhost:8100/zaehler" + "?" + targetZaehler;
-        //await fetch(urlZaehler);
         await fetch(url);
     }
+    //Aktualisiert die Datenbank, indem es die Seite neulädt, weil meine alte Methode aus Aufgabe11 hat nicht mehr funktioniert.
     async function reloadDatabase() {
         location.reload();
     }
+    //Beim Klicken dieser Buttons wird die komplette Bestellung ausgegraut und als "bearbeitet" abgestempelt.
     function handleBearbeitet(_event) {
         let targetZaehler = _event.currentTarget.parentElement.getAttribute("aktuellerZaehler");
         document.getElementById("aktuelleBestellungenDIV" + targetZaehler).style.borderColor = "lightgrey";

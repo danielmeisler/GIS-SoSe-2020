@@ -4,6 +4,7 @@ import * as Mongo from "mongodb";
 
 export namespace Eisdiele {
 
+    //Variable des Typen Collection wird deklariert.
     let eisDatenbank: Mongo.Collection;
     
     //Konsolen Ausgabe, dass der Server startet.
@@ -17,6 +18,7 @@ export namespace Eisdiele {
     //let databaseURL: string = "mongodb://localhost:27017";
     let databaseURL: string = "mongodb+srv://dbUser:pw123@gis-sose2020-vjhd2.mongodb.net/Eisdiele?retryWrites=true&w=majority";
 
+    //Server wird gestartet und Datenbank verbunden.
     startServer(port);
     connectToDatabase(databaseURL);
 
@@ -43,8 +45,8 @@ export namespace Eisdiele {
         console.log("Listening");
     }
 
+    //Funktion um alle Anfragen von der Datenbank usw. mithilfe vom path zu bearbeiten.
     export async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
-        //Konsole gibt beim Aufruf "I hear voices!" aus.
         console.log("I hear voices!");
 
         //Parameter werden für die Response festgelegt.
@@ -57,9 +59,12 @@ export namespace Eisdiele {
             let jsonString: string = "";
             let results: String[] = await eisDatenbank.find().toArray();
 
+            //Bei /add wird die Bestellung in die Datenbank gespeichert.
             if (path == "/add") {
                 eisDatenbank.insertOne(urlQuery.query);
             }
+
+            //Hier werden die einzelnen Bestellungen einzeln in Brackets rausgefiltert, abgespeichert und zurückgegeben.
             if (path == "/show") {
                 jsonString += "[";
                 for (let i: number = 0; i < results.length; i++) {
@@ -70,6 +75,8 @@ export namespace Eisdiele {
                 }
                 jsonString += "]";
             }
+            
+            //Der Zaehler wird aus der query gefiltert und dazu benutzt die einzelnen Einträge zu löschen.
             if (path == "/delete") {
                 for (let i: number = 0; i < results.length; i++) {
                     let stringQuery: string = JSON.stringify(urlQuery.query);
@@ -77,15 +84,17 @@ export namespace Eisdiele {
                     jsonString += JSON.stringify(eisDatenbank.deleteOne(results[deleteCounter]));
                 }
             }
+            
+            //Alle Einträge werden in der Schleife gelöscht.
             if (path == "/deleteAll") {          
                 for (let i: number = 0; i < results.length; i++) {
                     jsonString += JSON.stringify(eisDatenbank.deleteOne(results[i]));
                 }
             }
-            _response.write(jsonString);
-
-            _response.end();
             
+            //Anfrage wird zurückgegeben und beendet.
+            _response.write(jsonString);
+            _response.end();
         }
     }
 }

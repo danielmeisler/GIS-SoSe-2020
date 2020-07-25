@@ -1,5 +1,6 @@
 namespace Eisdiele {
 
+    //Buttons zum Bestellungen entfernen und Bestellen werden generiert.
     let entferneAllesButton: HTMLButtonElement = document.createElement("button");
     entferneAllesButton.id = "allesEntfernen";
     entferneAllesButton.innerHTML = "Alles entfernen";
@@ -12,11 +13,13 @@ namespace Eisdiele {
     warenkorbButton.addEventListener("click", handleWarenkorb);
     document.getElementById("orderButton")?.appendChild(warenkorbButton);
 
+    //Data.json Artikel werden nochmal übergeben, damit die beim Bestellen in die DB packen kann.
     export async function handleWarenkorb(): Promise<void> {
         await communicate("data.json");
         handleBestellung();
     }
 
+    //Die in den Warenkorb geklickten Artikel werden generiert.
     bestellungenAnzeigen();
     function bestellungenAnzeigen(): void {
         
@@ -51,6 +54,7 @@ namespace Eisdiele {
         }
     }
     
+    //Die Gesamtsumme des Einkaufs wird mit dem Preis, der im Shop in den localstorage gepackt wurde, berechnet.
     function summeWarenkorb(): void {
         let summe: number = 0;
         let temp: number = 0;
@@ -67,12 +71,14 @@ namespace Eisdiele {
         document.getElementById("summeWarenkorb")?.appendChild(xSumme);
     }
 
+    //Entfernt alle Bestellungen und leert den LocalStorage.
     function handleAllesEntfernen(_event: Event): void {
         localStorage.clear();
         document.getElementById("summeWarenkorbID")?.remove();
         bestellungenAnzeigen();
     }
 
+    //Entfernen einzelner Artikel und zieht auch den Preis von der Summe ab.
     function handleBestellungEntfernen(_event: Event): void {
         ((<HTMLDivElement>_event.currentTarget).parentElement!).remove();
 
@@ -85,11 +91,14 @@ namespace Eisdiele {
         localStorage.zaehler--;
     }
 
+    //Form und Bestellung werden als url zusammengebaut und in die DB gepackt.
+    //Der Bestellungs-String wird vorher so definiert, dass man ihn in die url anhängen kann.
     export async function handleBestellung(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]); 
         let url: string = "https://gissose2020-danielmeisler.herokuapp.com";
         //let url: string = "http://localhost:8100";
         url += "/add";
+        // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any> formData);
         url = url + "?" + query.toString();
         (<HTMLFormElement>document.getElementById("orderData"))?.reset();
